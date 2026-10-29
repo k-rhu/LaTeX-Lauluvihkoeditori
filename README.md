@@ -1,1 +1,1 @@
-# Latex-Lauluvihkoeditori
+# LaTeX-Lauluvihkoeditori
