@@ -19,6 +19,7 @@ babel.sty // lokalisaatio
 blindtext.sty // testaus, ei vaadi tuotantoversiossa
 
 verse.sty // runollisten tekstien säettämiseen ja kirjoittamiseen
+needspace.sty // säkeistöjen mahduttaminen samalle sivulle
 
 titlesec.sty // otsikoiden formatointi
 tocloft.sty // sisällysluettelon formatointi
