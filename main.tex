@@ -1,0 +1,369 @@
+\documentclass[11pt]{article} %fonttikoko
+\usepackage{graphicx} % Required for inserting images
+\usepackage[hidelinks]{hyperref}
+\usepackage[left=2cm,right=2cm,bottom=1in]{geometry}
+%\usepackage{verse} % sisältyy laulupankki -pakettiin
+\usepackage{multicol}
+
+
+\usepackage{laulupankki}
+
+%-----------------------------------------------------------------------------
+%
+%       MEIDÄN HIENO PAKETTIMUOTOINEN LAULUPANKKI laulupankki.sty
+%
+%-----------------------------------------------------------------------------
+
+
+
+\usepackage{titlesec} %
+
+\usepackage{blindtext}
+\usepackage[finnish]{babel}
+
+\usepackage{tocloft} % Formationtia varten
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}   %   Piste-erottimet sisällysluetteloon
+\setlength{\cftbeforesecskip}{2pt}   % tiivistys sisällysluetteloon section
+\setlength{\cftbeforesubsecskip}{1pt}   % tiivistys sisällysluetteloon subsection
+
+
+
+
+%
+%           Seuraavalla komennolla lisätään tilaa sisällysluetteloon
+%           Laulun numeron ja otsikon väliin.
+%
+
+\setlength{\cftsecnumwidth}{2.2em} 
+
+
+%\renewcommand{\thesubsection}{\thesection67.} %custom pääte alaotsikoihin
+
+
+%
+%       Määritellään laulujen otsikot pienemmiksi, ja lisätään piste numeron perään
+%
+
+\titleformat{\section}
+  {\normalfont\bfseries} %fonttikoko normal, bold 
+  {\thesection.}
+  {1em}
+  {}
+
+%
+%       Sama operaatio alaotsikoille, sikäli mikäli käytät alaotsikoita esim.
+%       vaihtoehtoisia sanoituksia varten laulupankissa
+%
+
+
+\titleformat{\subsection}
+  {\normalfont\bfseries} %fontti normal, bold 
+  {\thesubsection}
+  {1em}
+  {}
+
+%
+%           Määritellään seuraavaksi laulujen otsikoitden asettelu, koska asettelu
+%           menee vituiksi otsikon formatoinnin yhteydessä
+%
+
+\titlespacing*{\section}
+{1,2cm} %tilaa vasemmalla
+{2pt} %tilaa päällä
+{0,2pt} %tilaa alla
+
+
+%\renewcommand\thesubsection{\thesection\arabic{subsection}.} % pisteet alaotsikkonumeroiden perään
+
+\titlespacing*{\subsection} %samat alaotsikoille
+{1,2cm}
+{2pt}
+{0,2pt}
+
+
+%\renewcommand{\thepage}{67} %custom sivunumero 67-sitseillä :D
+
+%           Voit siirrellä lauluja sivulta toiselle komentoyhdistelmällä
+%           \vfill\null \columnbreak
+%           Tämä kuitenkin on työlästä, joten määritellään uusi komento tätä varten
+%
+
+\newcommand{\cb}{\vfill\null \columnbreak}
+
+%           
+%           Nyt voit komennolla \cb siirtää seuraavan laulun alun seuraavalle
+%           kolumnille tai sivulle.
+%
+
+
+%---------------------------------
+%       ETUSIVU
+%---------------------------------
+
+\begin{document}
+
+\thispagestyle{empty}
+\vspace*{1cm}
+\begin{center}
+\includegraphics[width=0.9\linewidth]{Sigmamv.png}\\
+\vspace{1cm}
+\LARGE \textbf{Mistä nää tuut?\\Laululäsy}
+\end{center}
+
+\clearpage
+
+%---------------------------------
+%       SÄÄNNÖT
+%---------------------------------
+
+\begin{center}
+\textbf{Sitsietiketti}
+\vspace{0.3cm}
+
+
+
+\begin{itemize}
+    \item Seremoniamestarit pyytävät puheenvuoron sauvan avulla.
+    \begin{itemize}
+        \item Yksi kopautus: Seremoniamestarit pyytävät hiljaisuutta
+        \item Kaksi kopautusta: Seramoniamestarit pyytävät hiljaisuutta JA heillä on asiaa
+        \item Kolme kopautusta: Seremoniamestarit pyytävät hiljaisuutta JA heillä on asiaa JA heillä on jano
+    \end{itemize}
+    \item Jokaisen puheenvuoron ja laulun lopuksi skoolataan. Skål-järjestys: etuvasen, etuoikea, eteen
+    \item Kaikille juomille tulee laulaa kerran ennen niiden avaamista. Kun juoma on avattu, sitä saa juoda milloin vain.
+    \item Vessassa saa käydä sitsien aikana vessahattu päässä. Muuten pöydästä ei saa nousta kuin vain tauolla. Vältetään kuitenkin tilassa kulkemista laulujen ja puheiden aikana.
+    \item Hyvään sitsietikettiin kuuluu hyvä käytös. Ethän pilaa muiden sitsaajien iltaa omalla toiminnallasi.
+    \item Puhelimen käyttäminen sitsien aikana on kielletty.
+\end{itemize}
+
+\textbf{Puheenvuorot}
+\vspace{0.3cm}
+\begin{itemize}
+    \item Jokainen sitseillä olija, voi pitää puheenvuoron. Puheenvuoron saa nousemalla ylös ja sanomalla kovaan ääneen \textit{"Kilinkolin, kilinkolin"}.
+    \item Esittele itsesi puheenvuoron aluksi. Esittelyn jälkeen voit pitää puheenvuoron. Puheenvuoron lopuksi saat halutessasi toivoa laulua.
+    \item Lauluja toivotaan vain laululäsystä. Lisäsäkeistöjen laulaminen on sallittua.
+    \item Annetaan mahdollisimman monelle mahdollisuus pitää puheenvuoroja. Ethän siis pyydä puheenvuoroa jatkuvasti itsellesi ;)
+\end{itemize}
+
+\textbf{Välihuutelut}
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textit{Skål!} Huudetaan yhdessä jokaisen laulun lopuksi ja skoolataan sitsietiketin mukaan.
+    \item \textit{Mellis!} Suomennos sanoista mellan sup, eli välihörppy. Mellis huudetaan kesken laulun, jolloin laulaminen lopetetaan välihörpyn ajaksi. Hörpyn jälkeen laulua jatketaan.
+    \item \textit{Omstart!} Laulu tai säkeistö aloitetaan alusta. Huudetaan usein jos laulaminen ei suju kuten sen kuuluisi sujua.
+    \item \textit{Tempo!} Laulun aikana kuuluva huudahdus, mikä tarkoittaa että laulun tempoa nostetaan eli laulaminen tapahtuu nopeampaa.
+\end{itemize}
+\end{center}
+
+
+\clearpage
+
+%---------------------------------
+%       SISÄLLYSLUETTELO
+%---------------------------------
+
+\begin{multicols}{2}
+
+\tableofcontents
+
+\end{multicols}
+
+
+\clearpage
+
+
+%---------------------------------
+%           
+%       ITSE BIISIT ALKAA
+%
+%---------------------------------
+
+
+
+\begin{multicols}{2}
+
+    \helangar
+    
+    %---------------------------------
+    %           vesi
+    %---------------------------------
+    \aquavera
+
+    \cb
+    \vesihenkilo
+
+    %---------------------------------
+    %           kalja
+    %---------------------------------
+    \nautintoainekaanon
+    \kaljaa
+    
+
+
+   % \ystavasasnapsien
+    
+    %---------------------------------
+    %           siideri
+    %---------------------------------
+    \sensiiderin
+
+    %---------------------------------
+    %           lonkero
+    %---------------------------------
+    \lonkero
+
+
+    %---------------------------------
+    %           vahvat
+    %---------------------------------
+   % \vauhtijuoma
+    \viinamaa
+
+    \koskenkorvaa
+    
+
+    %---------------------------------
+    %           jallu
+    %---------------------------------
+    \jallutahdenalla
+
+    
+    %---------------------------------
+    %           viini
+    %---------------------------------
+    \skumppaapunkunkaa
+    %\boheemirapsakka
+
+    %---------------------------------
+    %           muita juomia
+    %---------------------------------
+    %\gambinacocktailjuoma
+
+
+    %---------------------------------
+    %           RYYBS+KRAPS+KRAPULA
+    %---------------------------------
+    
+    \karhuviina
+    %\aamullavarhain
+    \laulutaidottomille
+    \minnet
+    \ikuinenkanni
+
+    \tanaanotetaan
+    %\larvit
+    %\eurovision
+    %\aidinpienetsienet
+
+
+
+    
+
+
+    %---------------------------------
+    %           leikkilauluja
+    %---------------------------------
+    \testamentti
+    \pikkukakkonen
+    \varpunen
+
+
+    %---------------------------------
+    %           matfys lauluja
+    %---------------------------------
+    
+    %\laser
+    %\osittaisderivaattalaulu
+    \derivaattanollanarvoinen
+
+    %---------------------------------
+    %           muuta hassua
+    %---------------------------------
+    %\eukkosi
+    \muinaistenvalssi
+
+    \mandariinimies
+    %\setoinenmandariinilaulu
+    \mandariinihunningolla
+    
+    \volga
+    
+    \miesulossinusta
+    %\sauron
+    
+    \vanhustenpoyta
+    \amorinfinitus
+    \onomato
+    %\sahtilaulu
+    
+    %---------------------------------
+    %           kauneimmat oululaulut
+    %---------------------------------
+    \toppila
+    \oulumaa
+    \oululainenbaarikierros
+    %\tuuppatanneouluun
+    \kukakakkaaaltaaseen
+    %\kopille
+    %\kopinraja
+    %\paljukansa
+    \kaijonvalot
+    \ukkometso
+
+    %---------------------------------
+    %           lisää hauskoja lauluja
+    %---------------------------------
+    \sitsipoytahajotettu
+    %\patkismunkki
+    %\hulivilipojanhumppa
+    
+    %---------------------------------
+    %           vittu
+    %---------------------------------
+    %\vlaulu
+    \vitutuslaulu
+    \viskadrickahelanatten
+    
+    %---------------------------------
+    %           meemi bängereitä
+    %---------------------------------
+    %\grandiosa
+    \yollataas
+    \siljalinespecial
+    %\sandstorm
+    \piilossaviinat 
+    \exculaulu
+    \sornaigusha
+    %\hittiputki
+    \annannen
+    %\schro
+
+    %---------------------------------
+    %           loppu- ja välilaulut
+    %---------------------------------
+    \henkilokunta 
+    \fuksilaulu
+
+    
+
+\end{multicols}
+
+\clearpage
+\begin{center}
+    
+
+\vspace{1cm}
+\textbf{Turvallisemman tilan periaatteet}\\
+Tapahtumassa noudatetaan Sigma-kilta ry:n Turvallisemman tilan periaatteita\\
+
+\vspace{1.0cm}
+\textbf{Tämän tapahtuman häirintäyhteyshenkilöt:}\\
+Ellen Uusikylä, TG: @ellenhilla\\
+Ville Markkanen, TG: @mehumake\\
+
+\vspace{1cm}
+\textbf{Sigma-killan killan häirintäyhteyshenkilöt tavoittaa osoitteesta}\\
+hairinta@sigma-kilta.net
+\end{center}
+\end{document}

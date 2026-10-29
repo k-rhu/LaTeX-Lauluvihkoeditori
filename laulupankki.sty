@@ -1,0 +1,3062 @@
+%           AUTH: bear
+%           VERSION: 2026-09
+%
+
+
+\ProvidesPackage{laulupankki}[2026 sitsilauluja]
+
+
+\RequirePackage{verse}
+\RequirePackage{needspace}
+\RequirePackage{comment}
+
+
+%---------------------------------------------
+%       OHJEET LAULUPANKIN KÄYTTÄJÄLLE
+%---------------------------------------------
+%
+%               Laulut määritellään laulupankissa uusina komentoina \newcommand{\laulu}{
+%               }
+%               -tyylillä. Aloita lalulu tämän jälkeen otsikolla \section{}
+%
+%               Laulupankissa käytetään \newommand{}:ia \def:n sijasta, jottei vahingossa
+%               korvata olemassa olevia LaTeXin komentoja.
+%
+%               Laulupankissa käytetään verse-pakettia. Aloita laulun komennolla
+%               \bein{verse}
+%               samoiten laulu päättyy komennolla 
+%               \end{verse}
+%
+%               Laulun sisällä rivinvaihdot tehdään kahdella alamäellä
+%               \\
+%
+%               Säkeistön päätteeksi saat skipattua rivin kahdella alamäellä ja huutomerkillä
+%               \\!
+%
+%               Jotta säkeistöt eivät leikkaannu puolivälistä kolumnin tai sivun loppuessa,
+%               käytössä on needspace-paketti. Tällä voidaan määritellä rivien määrä, jota
+%               osio tarvitsee pysyäkseen kasassa
+%               
+%               \needspace{1\baslineskip} -komennon sijaan voit käyttää alla
+%               määriteltyä komentoa, luotu taiteilijan ajan säästämiseksi
+%
+
+\newcommand{\ns}[1]{\needspace{#1\baselineskip}}
+
+%
+%               Nyt komento toimii lyhyellä \ns{} -komennolla, jossa sulkeiden sisään 
+%               laitetaan tarvittava rivien määrä
+%
+
+%
+%           Lisäksi määriteltiin komento laulun osien poistamiselle, jotta ei tarvitse
+%           kommentoida tai poistaa säkeistöjä ym. rivi kerrallaan
+%
+
+\newcommand{\poisto}[1]{}
+
+%
+%           Voit poistaa säkeistöä ym. komennolla \poisto{}, jossa poistettava osa
+%           laitetaan kaarisulkeiden sisään. Muista ottaa \ns{} -komennot mukaan poistoon,
+%           jottei läsyyn tulostu turhaan tyhjiä osia.
+%
+%       --------------------------------
+%           Yleisesti formatoinnista
+%       --------------------------------
+
+%           - Hyvä tapa on merkata laulun sävel sulkeisiin ja italiccina laulun alkuun
+%           ==> käytä \textit{}:tä tätä varten
+%
+%           - Mikäli laulussa kerrataan jokin osa, älä kirjoita koko osaa uudelleen, vaan
+%           lisää kertausmerkit :,: säkeistön molemmille osin.
+%           Jos taas jokin säkeistö toistetaan myöhemmin, voit kirjottaa säkeistön alun
+%           ja laittaa kolme pistettä (\dots) perään, jolloin aasinkin tulisi tajuta
+%           katsoa sanoja ylempää, jos on tarve.
+%           
+%           - Formatointi verse-paketissa menee oudoksi sisennyksineen, jos rivin pituus
+%           ylittää kolumin leveyden. Katkaise ylipitkät rivit soveltuvilta osin ja siirrä
+%           seuraavalle riville.
+%
+%           Ota mallia alla olevista lauluista, ja lisää omasi tarvittaessa listan loppuun
+%
+
+%-------------------
+%   HELAN GÅR
+%-------------------
+
+\newcommand{\helangar}{
+\section{Helan går}
+\begin{verse}
+\ns{5}
+    En liten fågel satt en gång\\
+    och sjöng i furuskog.\\
+    Han hade sjungit dagen lång\\
+    men dock ej sjungit nog.\\
+    Vad sjöng den lilla fågeln då? JO!\\!
+
+\ns{6}
+    Helan går sjung hoppfaderallanlallanlej \\
+    helan går sjung hoppfaderallanlej. \\
+    Och den som inte helan tar \\
+    han heller inte halvan får. \\
+    Helan går! \textit{(JUO!)} \\
+    Sjung hoppfaderallanlej! HEJ
+\end{verse}}
+
+%-------------------
+%   AQUA VERA
+%-------------------
+
+\newcommand{\aquavera}{
+\ns{9}
+\section{Aqua Vera}
+\begin{verse}
+    Lauletaanpas vedestä,\\
+    jota aina riittää.\\
+    Vaikka kuinka joisit sä,\\
+    ei se lopu siitä.\\
+    Pikku Aqun jano on,\\
+    niin myös Paulin, Anteron.\\
+    AH, kun sentään hyvältä\\
+    paljas vesi maistuu.\\!
+
+\ns{5}
+    :,: Oooch vatten och vatten och\\
+    vatten är så gott,\\
+    så rysligt, fasligt, billigt,\\
+    så hälsosamt och vått :,:\\
+    1, 2, 3,VATTEN!\\!
+
+\ns{9}
+    Entäs sitten aamulla,\\
+    on olo mitä parhain.\\
+    Kannat vettä saavilla,\\
+    sängyn viereen varhain.\\
+    Aamuyöllä vessassa\\
+    tuumit sormet kurkussa\\
+    AH, kun sentään\\
+    hyvältä paljas vesi\\
+    maistuu.\\!
+
+\ns{3}
+    :,: Oooch vatten och vatten och vatten är\\
+    så gott, så rysligt, fasligt, billigt,\\
+    så hälsosamt och vått :,:\\!
+    
+    1, 2, 3,VATTEN! \\
+\end{verse}}
+
+
+%---------------------------------
+%           Vesihenkilöihn marssi
+%---------------------------------
+
+\newcommand{\vesihenkilo}{
+\ns{6}
+\section{Vesihenkilöin marssi}
+\begin{verse}
+
+    \textit{(säv. Kapteeni katsoi horisonttihin)}\\!
+    Pois se meistä, että täällä maisteltais\\
+    noita pahan tuomia, alkoholijuomia,\\
+    vaikka henki keltä täällä haisteltais niin\\
+    huugo raikas sois.\\! 
+
+\ns{5}
+    Hurraa, me nuoret vedenjuojat,\\
+    pää on selvä meillä aina,\\
+    krapulat ei meitä paina, hurraa,\\
+    me nuoret vedenjuojat, meillä\\
+    luonto raitis on.\\!
+
+\ns{5}
+    Säyseästi näin kun aina elelee,\\ 
+    itseksensä hissuksiin,\\
+    nenä kirjassansa kiinn’.\\
+    Tarmokkaasti lasiin aina sylkäisee,\\
+    siitä riemu verraton.\\!
+
+    Hurraa, me nuoret\dots\\!
+
+\ns{5}
+    Paha perii riettauden sellaisen,\\
+    jota toiset harjoittaa,\\
+    kun he itsens’ juovuttaa.\\
+    Sukukunnan turman tuopi tuollainen,\\ 
+    kulttuurin turmion.\\!
+    
+    Hurraa, me nuoret\dots
+\end{verse}}
+
+%---------------------------------
+%       Nautintoainekaanon
+%---------------------------------
+
+\newcommand{\nautintoainekaanon}{
+\ns{6}
+\section{Nautintoainekaanon}
+\begin{verse}
+    (säv. Jaakko-kulta)\\!
+    Lapin kulta, Lapin kulta,\\
+    Karjala, Karjala,\\
+    Karhu ja Olvi, Karhu ja Olvi.\\
+    Koff, Koff, Koff, Koff, Koff, Koff.\\
+
+\ns{4}
+    Coca-Cola, Coca-Cola,\\
+    Sprite, Sprite, \\
+    Fanta ja Pepsi, Fanta ja Pepsi.\\
+    Hämähäkkimies, Hämähäkkimies.\\!
+
+\ns{4}
+    Kokaiini, kokaiini, \\
+    LSD, LSD\\
+    heroiini, hasis, heroiini hasis.\\
+    Crack, crack, crack, crack, crack, crack.
+\end{verse}}
+
+
+%---------------------------------
+%       Kaljaa
+%---------------------------------
+
+\newcommand{\kaljaa}{
+\ns{11}
+\section{Kaljaa}
+\begin{verse}
+    \textit{(sävel: Kauan)}\\!
+    Aina kun iltaisin mä opiskelen,\\
+    mun mieli tekee niin – Kaljaa. \\!
+    
+    Toisien kanssa milloin oleskelen,\\ 
+    mä silloin tahdon niin – Kaljaa.\\!
+    
+    Siihen himoon auta eivät vissyt eikä limut,\\
+    pienen lohdun tuoda voivat typsyt sekä pimut.\\
+    Suostu mä en\dots \\
+    nyt tyytymään limppariin, \\
+    kun kerran kumota voin paljon parempaakin:\\!
+
+\ns{3}
+    Kaljaa – saunassa kiskotaan,\\
+    Kaljaa – juomasta nautitaan,\\
+    Kaljaa – juoda me aina halutaan.\\!
+
+\ns{10}
+    Teekkaritalolle siis polkuni käy\\
+    ja reppu kilisee – Kaljaa. \\!
+    
+    Sauna vaan kuumaksi ja \\
+    kassista kohta esiin otetaan – Kaljaa.\\!
+    
+    Mut miksi täytyy loppua nyt\\
+    tämän ihanuuden, \\
+    tahdon pullon paremman, täyden ihkauuden!\\
+    Miksi on niin\dots \\
+    kas pullohan tyhjenee, \\
+    kun sitä illan mittaan naukkailee: \\!
+
+\ns{3}
+    Kaljaa – lisää me tahdotaan,\\
+    Kaljaa – tiskiltä noudetaan,\\
+    Kaljaa – juoda me aina halutaan.
+\end{verse}}
+
+
+%---------------------------------
+%       Ystävä sä Snapsien
+%---------------------------------
+
+\newcommand{\ystavasasnapsien}{
+\ns{7}
+\section{Ystävä sä snapsien}
+\begin{verse}
+    Ystävä sä snapsien,\\
+    kaada lasiin pienehen.\\
+    Minne käynkin maailmassa,\\
+    siellä olen humalassa.\\
+    Seuran taso vaihtelee,\\
+    känni silloin suojelee.\\
+\end{verse}
+}
+
+
+%-------------------
+%   HENKILÖKUNTA
+%-------------------
+
+\newcommand{\henkilokunta}{
+\ns{7}
+\section{Henkilökunta}
+\begin{verse}
+    :,: Henkilökunta, henkilökunta, parlevu :,:\\
+    Henkilökunta, henkilökunta,\\
+    henkilökunta, henkilökunta.\\
+    :,: Henkilökunta, parlevu :,:\\
+    Lissää viinaa, lissää viinaa, parlevu\dots\\
+    Kaljakin kelpaa, kaljakin kelpaa, parlevu\dots\\
+\end{verse}}
+
+%---------------------------------
+%       Fuksilaulu
+%---------------------------------
+
+
+\newcommand{\fuksilaulu} {
+\ns{5}
+\section{Fuksilaulu}
+\begin{verse}
+    :,: Ken ompi fuksi XX ylös nouskohon :,:\\
+    Hän lasin käteen ottakoon\\ 
+    ja huulilleen sen nostakoon\\
+    :,: Juo pois, juo pois, juo pois, juo pois, juo \\ herran tähden pois, JUO POIS!  :,:\\!
+
+\ns{3}
+    :,: Ken ompi fuksi Sigmalta\dots :,:\\
+    :,: Ken ompi fuksi ylipäänsä\dots :,:\\
+\end{verse}}
+
+%---------------------------------
+%       Sen Siiderin
+%---------------------------------
+
+
+\newcommand{\sensiiderin}{
+\ns{7}
+\section{Sen siiderin}
+\begin{verse}
+    (säv. Den glider in)\\!
+    
+    Sen siiderin, sen siiderin,\\
+    sen siiderin kumoon imen.\\
+    Viskaan helttaani mä sen,\\
+    kaljaa vihaan –\\
+    viskaan taas kulkkuun sen!\\!
+\end{verse}
+}
+
+%---------------------------------
+%       Lonkéro
+%---------------------------------
+
+\newcommand{\lonkero}{
+\ns{8}
+\section{Lonkéro}
+\begin{verse}
+    \textit{(säv. Pokémon)}\\!
+    Mä tunnen sen jo tympivän,\\
+    kaljan lämpimän. \\
+    Uuden vaiheen aloitan nyt gluteenittoman! \\
+    Lailla nuoruusvuosien en tyydy Karjalaan. \\
+    Juoman harmaan valitsen, \\
+    jää hyllyyn I.P.A.!\\!
+
+\ns{10}
+    Lonkeron - juomakseni saan!\\
+    Vaik olut ois halvempaa! \\
+    Lonkero \\
+    Oot mun valintain joka jurri-iltanain. \\
+    Lonkeron - (juokamseni saan)\\
+    kun kurkkuun saan, \\
+    en kirkkaampaa kaipaakaan.\\
+    Limee, greippii, karpaloo!\\
+    Lonkeroo!\\
+    Juomakseni saan, juomakseni saan - Lonkeron!
+\end{verse}}
+
+%---------------------------------
+%       Vauhtijuoma
+%---------------------------------
+
+\newcommand{\vauhtijuoma}{
+\ns{6}
+\section{Vauhtijuoma}
+\begin{verse}
+    \textit{(säv. Ankronikka)}\\!
+    Vauhtijuoma hurjin on - KOSKENKORVA\\
+    Pää on täynnä säpinää - KOSKENKORVA\\
+    Ja pullot aukee\\
+    Joku korkin polkee\\!
+
+\ns{5}
+    KOSKENKORVA\\
+    Uutta pulloo aina avaan\\
+    KOSKENKORVA\\
+    Ensin pahaa, kunnes hyvää\\
+    KOSKENKORVA\\!
+
+\ns{3}
+    Kun liskot vaanii sängyssäsi\\
+    Ruma mamma vierelläsi\\
+    Mitä teit sen kaiken syy on\\!
+
+\ns{7}
+    KOSKENKORVA\\
+    Uutta pulloo taasen avaan\\
+    KOSKENKORVA\\
+    Aamulla taas pönttöö halaan\\
+    KOSKENKORVA\\
+    Ei Vergit eikä Saarenmaa vaan\\
+    KOSKENKORVA
+\end{verse}}
+
+%---------------------------------
+%       Viinamaa
+%---------------------------------
+
+\newcommand{\viinamaa}{
+\ns{7}
+\section{Viinamaa}
+\begin{verse}
+    \textit{(säv. Puuuhamaa)}\\!
+    Viinamaa on paras paikka,\\
+    Viinamaa on iloinen.\\
+    Viinamaassa vietät vaikka, \\
+    Koko päivän kännisen.\\
+    Sellainen on viinamaa!
+\end{verse}}
+
+%---------------------------------
+%       Koskenkorvaa
+%---------------------------------
+
+\newcommand{\koskenkorvaa}{
+\ns{7}
+\section{Koskenkorvaa}
+\begin{verse}
+    Ko-ko-ko-kosken-ko-ko-kokorvaa,\\
+    siitä aina kunnonrä-käkä-kännit saa.\\
+    Ko-ko-ko-koskenko-ko-ko-korvaa,\\
+    siitä aina kunnon rä-kä-kä-kännit.\\
+    Aina kunnon rä-kä-kä-kännit,\\
+    aina kunnon rä-kä-kä-kännit saa-aa-a!\\!
+
+\ns{3}
+    Siitä saa! \textit{(Siitä saa!)}\\
+    Aina saa! \textit{(Aina saa!)}\\
+    Aina saa-aa-a!
+\end{verse}}
+
+%---------------------------------
+%       Jallutähden alla
+%---------------------------------
+
+\newcommand{\jallutahdenalla}{
+\ns{10}
+\section{Jallutähden alla}
+\begin{verse}
+    \textit{(säv. Täällä pohjantähden alla)}\\!
+    Täällä jallutähden alla\\
+    Korkeimmalla kukkulalla.\\
+    Katson läpi lasin tyhjän,\\
+    Sen täytän uudestaan.\\
+    Täällä jallutähden alla,\\
+    Lasi täyttyy leikatulla. \\
+    Siitä suojakseni peiton, \\
+    Minä itselleni saan.\\!
+
+\ns{4}
+    Ja alla jallutähden,\\
+    Minä otan, yhden tähden, \\
+    Ja vain jallutähden nähden,\\
+    Itken ilon kyyneleen.\\!
+
+\ns{8}
+    Täällä jallutähden alla,\\
+    Kova jano laulajalla.\\
+    Huolet viinaa naukkaamalla \\
+    Siirtyy päivään huomiseen \\
+    Täällä jallutähden alla, \\
+    Hiipii sieluun asti halla,\\
+    Mutta korkin avaamalla, \\
+    Sulaa sydän uudelleen.\\!
+    
+    :,:Ja alla jallutähden\dots:,:
+\end{verse}}
+
+%---------------------------------
+%       Skumppaa punkun kaa
+%---------------------------------
+
+\newcommand{\skumppaapunkunkaa}{
+\ns{10}
+\section{Skumppaa punkun kaa}
+\begin{verse}
+    \textit{(säv. Boom kah)} \\!
+    Krapula on jo ohi kohta,\\
+    joten skippaa se kotisohva.\\
+    Myöhemminkin ehtii lepää,\\
+    nyt aletaan leipää vetää.\\
+    Ihan näätää jäädä hyytyyn,\\
+    tai painaa päätä tyynyyn.\\
+    Mennään täysii, \\
+    kone käyntiin.\\!
+
+\ns{5}
+    SKUMPPAA PUNKUN KAA!\\
+    Ei jäädä simaa kupittaa, \\
+    joten hei juodaan mitä huvittaa. \\
+    :,:Missä nähään, mis on tänää,\\
+    skumppaa punkun kaa! :,:\\!
+
+\ns{8}
+    Hyvää mummii etsimässä, \\
+    ja se kumotaan heti tässä. \\
+    Hyvät pohjat on ku ässä hihas, \\
+    joten sammun tässä pihas. \\
+    Mummi sinkoo sinne tänne, \\
+    tai viel vaik pidemmälle. \\
+    Nyt tuopit täyteen,\\
+    tyhjäks täyteen,\\!
+
+\ns{2}
+    SKUMPPAA PUNKUN KAA!\\
+    Ei jäädä simaa kupittaa\dots
+\end{verse}}
+
+%---------------------------------
+%       Boheemi rapsakka
+%---------------------------------
+
+\newcommand{\boheemirapsakka}{
+\ns{7}
+\section{Boheemi Rapsakka}
+\begin{verse}
+    \textit{(säv. Bohemian Rhapsody)}\\!
+    
+    Janooo! Tuokaa viiniä\\
+    Jo kuivaa meillä suu,\\
+    pullo punkkua, wuhuu!\\
+    Janooo! Juodaan viiniä!\\ 
+    Viini täyteläinen kurkun kostuttaa.\\!
+
+\ns{5}
+    Janooo, uu-uu-uuu!\\
+    Jos vettä väliin jois,\\
+    se janon hukkaan heittämistä ois.\\
+    Cabernet,  Sauvignon,\\
+    jano palaa kyllä.
+\end{verse}
+}
+
+%---------------------------------
+%       Gambina Cocktailjuoma
+%---------------------------------
+
+\newcommand{\gambinacocktailjuoma}{
+\ns{7}
+\section{Gambina Coctailjuoma}
+\begin{verse}
+    \textit{(säv. Petteri Punakuono)}\\!
+    Muistat konjakin, tequilan,\\
+    romminkin varmaan.\\
+    Ja Koskenkorvan ja Martinin karvaan.\\
+    Mutta juoma tää,\\
+    sulta usein unholaan jää\dots\\!
+
+\ns{8}
+    Gambina Cocktailjuoma,\\
+    punainen on väriltään.\\
+    Liene ei liian huono,\\
+    Gambiinamme kellekkään.\\
+    Haukkuivat toiset illoin,\\
+    tärpätiksi pilkaten.\\
+    Tuosta vain saikin silloin,\\
+    juhlijamme aattehen:\\!
+
+\ns{8}
+    Vuosijuhla pitkä on,\\
+    puhemaraton.\\
+    Gambina vois mukanaan,\\
+    viedä sieltä humalaan!\\
+    Gambina siitä asti, \\
+    laukussa matkaten.\\
+    Nousuun saa joutuisasti,\\
+    juhlamielen iloisen.\\
+\end{verse}}
+
+%---------------------------------
+%       Karhuviina
+%---------------------------------
+
+\newcommand{\karhuviina}{
+\ns{6}
+\section{Karhuviina}
+\begin{verse}
+    \textit{(säv. Mörrimöykky)}\\!
+    Ottaisin minä Karhuviinaa,\\
+    jos vain pullon saisin.\\
+    :,: Koko pullon ryyppäisin\\
+    ja sitten oksentaisin. :,:\\!
+
+\ns{4}
+    Tiu-tau tiu-tau tili tali tittan,\\
+    juodaan rommia kolalla.\\
+    :,: Sitten kun ollaan koko pullo juotu,\\
+    niin ollaan perseet olalla. :,:\\!
+
+\ns{4}
+    Vaan eipä taida meidän äiti\\
+    Karhuviinaa ottaa.\\
+    :,: Eihän se edes usko,\\
+    että Karhuviina on totta. :,:\\!
+    
+    Tiu-tau tiu-tau\dots\\!
+
+\ns{6}
+    Syksyn tullen sieniä kasvaa\\
+    varpaanväleissämme\\
+    Eikä me sukkia vaihdeta\\
+    ei ainakaan keskenämme.\\
+    Eikä me sukkia vaihdeta\\
+    kuin korkeintaan keskenämme.\\!
+    
+    Tiu-tau tiu-tau\dots\\
+\end{verse}}
+
+%---------------------------------
+%       Aamulla varhain
+%---------------------------------
+
+\newcommand{\aamullavarhain}{
+\ns{6}
+\section{Aamulla varhain}
+\begin{verse}
+    \textit{(säv. Bella Ciao)}\\!
+    Aamulla varhain, kun pulloon tartuin,\\
+    oi bella ciao, bella ciao, bella ciao, ciao, ciao.\\
+    Aamulla varhain, kun pulloon tartuin,\\
+    sen käänsin kohti huuliain.\\!
+
+\ns{4}
+    Käy toverini nyt rinnalleni,\\
+    oi bella ciao, bella ciao, bella ciao, ciao, ciao.\\
+    Käy toverini nyt rinnalleni\\
+    ja kohtaloni aavistan.\\!
+
+\ns{4}
+    Kuin surmanluoti on tämä shotti,\\
+    oi bella ciao, bella ciao, bella ciao, ciao, ciao.\\
+    Kuin surmanluoti on tämä shotti,\\
+    vaan viimeiseksein ei se jää.\\!
+
+\ns{4}
+    Pimenee ilta ja sammuu silmät,\\
+    oi bella ciao, bella ciao, bella ciao, ciao, ciao.\\
+    Ja jos jalkain ei enää kantais,\\
+    minut kotiin saattakaa.\\!
+
+\ns{4}
+    Vaan jatkuu juhla kajoon aamun,\\
+    oi bella ciao, bella ciao, bella ciao, ciao, ciao.\\
+    Ja päivän koittoon juhlinta laantuu,\\
+    taas alkaakseen vain uudestaan.\\
+\end{verse}}
+
+%---------------------------------
+%       Juomalaulu Laulutaidottomille
+%---------------------------------
+
+\newcommand{\laulutaidottomille}{
+\ns{3}
+\section{Juomalaulu laulutaidottomille}
+\begin{verse}
+    \textit{(Lauletaan seisten)}\\!
+    NYT!
+\end{verse}}
+
+%---------------------------------
+%       Minnet
+%---------------------------------
+
+\newcommand{\minnet}{
+\ns{10}
+\section{Minnet}
+\begin{verse}
+    \textit{(säv. Memory)}\\!
+    Minnet!\\
+    Jag har tappat mitt minne!\\
+    Är jag svensk, eller finne?\\
+    Kommer inte ihåg.\\
+    Inne!\\
+    Är jag ut eller inne?\\
+    Jag har luckor i minne\\
+    sån’där små alkohål.\\!
+
+\ns{3}
+    Men besinn er, man tätar\\
+    med det brännvin man får,\\
+    fastän minnet och helan går!\\!
+
+\ns{8}
+    Minne?\\
+    Muisti hävis’, mutt’ minne?\\
+    Juhlista selvisimme\\
+    muistikatkoja on.\\
+    Minne?\\
+    Lähtisin vaikka minne,\\
+    kunhan selvittäisimme\\
+    mitä tapahtunut on.\\!
+
+\ns{2}
+    Mutta tiedän mä keinon mikä auttaapi tuo:\\
+    ota ryyppy, ja muistis’ juo!
+\end{verse}}
+
+%---------------------------------
+%       Ikuinen Känni
+%---------------------------------
+
+\newcommand{\ikuinenkanni}{
+\ns{14}
+\section{Ikuinen känni}
+\begin{verse}
+    \textit{(säv. Ikuinen virta)}\\!
+    Mun viinat vähenee \\
+    ne kurkkuun kaatunee\\
+    kuin vesi viemäriin\\
+    Mun jälkeeni ei jää\\
+    kai mitään juotavaa\\
+    pois kaikki kumotaan\\
+    Mä kännimaahan meen\\
+    ja uuden nousun teen\\
+    se kestää huomiseen\\
+    Vaan on turha rakentaa \\
+    känniä jatkuvaa\\
+    jos viinat loppuu taas\\!
+
+\ns{8}
+    Entä jos elämän ikuinen känni\\
+    katkeaa kuin lahonnut ränni,\\
+    entä jos eksyn matkalla Alkoon\\
+    Kiskonko itseni lippusalkoon\\
+    Ainoa vaiva on vain tämä horkka\\
+    Alkoon rynnimme taas joka sorkka\\
+    anteeksi Alko rauhaasi vaivaan\\
+    voinko mä rakentaa juoppojen taivaan\\!
+
+\ns{6}
+    Sä juovut uudelleen\\
+    tukes käytät lainoineen\\
+    kai pulloon ikuiseen\\
+    vaan miksi ryyppäät niin\\
+    jos sulle luvattiin\\
+    jo harkkapaikkakin\\!
+    
+    Entä jos elämän ikuinen\dots\\
+\end{verse}}
+
+%---------------------------------
+%       Tänään otetaan
+%---------------------------------
+
+\newcommand{\tanaanotetaan}{
+\ns{6}
+\section{Tänään otetaan}
+\begin{verse}
+    \textit{(säv. Joulu on taas)}\\!
+    :,: Tänään otetaan, tänään otetaan,\\
+    helevetin paljon viinaa :,:\\
+    :,: Huomenna on, huomenna on,\\
+    helevetin kova krapula :,:\\!
+
+\ns{5}
+    :,: I dag ska vi ta, i dag ska vi ta,\\
+    helevete mycket brännvin :,:\\
+    :,: I morgon ska vi ha,\\
+    i morgon ska vi ha,\\
+    heleveten kova krapula :,:\\!
+
+\ns{4}
+    :,: Tänä võtame, tänä võtame\\
+    kuradima palju viina :,:\\
+    :,: Homme meil on, homme meil on\\
+    kuradima kova pohmakas :,:\\!
+
+\ns{6}
+    :,: Tonight we shall get,\\
+    tonight we shall get,\\
+    absolutely fucking hammered. :,:\\
+    :,: Tomorrow we will be,\\
+    tomorrow we will be,\\
+    hungover beyond reason. :,:
+\end{verse}}
+
+%---------------------------------
+%       Lärvit
+%---------------------------------
+
+\newcommand{\larvit}{
+\ns{8}
+\section{Lärvit}
+\begin{verse}
+    \textit{(säv. Star-Wars Main Theme /\\
+    The Imperial March)}\\!
+
+    :,: Lär-vit, lä-lä-lä-lärvit,\\
+    lä-lä-lä-lärvit, nyt otetaan! :,;\\!
+    Kun eilen otin monta pulloa kuohuvaa,\\
+    niin hyvän olon siitä saan.\\
+    Ja siihen päälle perheputelin koshkista,\\
+    niin siitä vasta kone käynnistyy!\\!
+
+\ns{2}
+    :,: Lär-vit, lä-lä-lä-lärvit,\\
+    lä-lä-lä-lärvit, nyt otetaan! :,;\\!
+    
+    Mutta huomenna!\\!
+
+\ns{5}
+    Kraa-kraa-kraa-kraa-pula-kraa-pula,\\
+    kraa-kraa-kraa-kraa-pula-kraa-pula.\\
+    Kraa-kraa-kra-kraa-kraa-kra-kra-pula,\\
+    Kra-kraa-kraa-kra-kra-pula.\\
+    Kra-kraa-kraa-pula-kraa-pula.\\
+\end{verse}}
+
+%---------------------------------
+%       Eurovision-juomalaulu
+%---------------------------------
+
+\newcommand{\eurovision}{
+\ns{6}
+\section{Eurovision-juomalaulu}
+\begin{verse}
+    \textit{(säv. Eurovision tunnari)}\\!
+    Ranskassa juodaan viiniä,\\
+    Saksassa olutta, Venäjällä vodkaa.\\
+    Suomessa juodaan kaikkea, \\
+    Siis malja sille nostakaa!\\!
+
+\ns{4}
+    Norjassa poltetaan kirkkoja,\\
+    Hollannissa pilveä, Venäjällä vodkaa.\\
+    Suomessa poltetaan kaikkea,\\
+    Siis malja sille nostakaa!\\!
+
+\ns{4}
+    Norjassa syödään lunta,\\
+    Ruotsissa loskaa, Venäjällä paskaa.\\
+    Suomessa syödään kaikkea,\\
+    Siis malja sille nostakaa!
+\end{verse}}
+
+%---------------------------------
+%       Äidin pienet sienet
+%---------------------------------
+
+\newcommand{\aidinpienetsienet}{
+\ns{6}
+\section{Äidin pienet sienet}
+\begin{verse}
+    \textit{(säv. Porsaita äidin oomme kaikki)}\\!
+
+    Äidin pienet sienet ryyppää viinaa,\\
+    ryyppää viinaa, ryyppää viinaa\\
+    Äidin pienet sienet ryyppää viinaa,\\
+    ryyppää viinaa, viinaa.\\!
+
+\ns{7}
+    Äidin pienet sienet tulee känniin\dots\\
+    Äidin pienet sienet sitten sammuu\dots\\
+    Äidin pienet sienet joutuu putkaan\dots \\
+    Äidin pienet sienet rikkoo putkan\dots\\
+    Äidin pienet sienet tekee tehtaan\dots\\
+    Äidin pienet sienet tekee viina\dots\\
+    Äidin pienet sienet menee metsään\dots\\
+\end{verse}}
+
+%---------------------------------
+%       Testamentti
+%---------------------------------
+
+\newcommand{\testamentti}{
+\ns{6}
+\section{Testamentti}
+\begin{verse}
+    \textit{(säv. Jos sul lysti on)}\\!
+    
+    ;.; Kun mä kuolen, taskumattini sä saat ;.;\\
+    Sillä taivaassa kun juodaan,\\
+    siellä ämpärillä tuodaan.\\
+    Kun mä kuolen, taskumattini sä saat!\\!
+
+\ns{4}
+    ;.; Kun mä kuolen, vanhat kortsuni sä saat ;.;\\
+    Sillä taivaassa ei panna,\\
+    koska enkelit ei anna.\\
+    Kun mä kuolen, vanhat kortsuni sä saat!\\!
+
+\poisto{
+ns{4}
+    ;.; Kun mä kuolen, vanhan heilani sä saat ;.;\\
+    Sen voin jättää, ihanuuden,\\
+    kun saan enkelistä uuden.\\
+    Kun mä kuolen, vanhan heilani sä saat!\\!
+    }
+
+\ns{4}
+    ;.; Kun mä kuolen, pullo arkkuun laittakaa. ;.;\\
+    Sillä elo ilman viina\\
+    on myös taivaassakin piinaa,\\
+    Kun mä kuolen, pullo arkkuun laittakaa!\\!
+
+\poisto{\ns{4}
+    :,: Kun mä kuolen, asekätköni sä saat. :,:\\
+    Se on tuolla ladon alla,\\
+    kolmas kivi vasemmalla.\\
+    Kun mä kuolen, asekätköni sä saat.\\!
+    }
+
+\ns{4}
+    :,: Kun mä kuolen, korttipakkani sä saat. :,:\\
+    Sillä enkelit ei rokkaa,\\
+    eikä myöskään pelaa pokkaa.\\
+    Kun mä kuolen, korttipakkani sä saat.\\!
+
+\poisto{
+\ns{4}
+    :,: Kun mä kuolen Loimu-jäsenyyden saat. :,:\\
+    Tahdon antaa sen mä sulle,\\
+    ei oo enää hyötyy mulle,\\
+    kun mä kuolen Loimu-jäsenyyden saat.\\!
+    
+
+\ns{4}
+    :,: Kun mä kuolen Loimu-merkkini sä saat. :,:\\
+    Taivaas ei oo haalareita,\\
+    kaikki kulkee Aatameina,\\
+    kun mä kuolen Loimu-merkkini sä saat.\\
+    }
+    
+\end{verse}
+}
+
+%---------------------------------
+%       Pikku-kakkosen posti
+%---------------------------------
+
+\newcommand{\pikkukakkonen}{
+\ns{5}
+\section{Pikku-kakkosen posti}
+\begin{verse}
+    Pikku kakkosen posti\\
+    postilokero 347 33101\\
+    Tampere 10\\
+    Pikku kakkosen posti\\!
+
+\ns{2}
+    Pikku kakkosen URL\\
+    http://www.yle.fi/$\sim$ransu\\!
+
+\ns{4}
+    Pikku kakkosen Ransu\\
+    TV-historian kovin jätkä ikinä\\
+    Nelekytä vuotta nyrkki perseessä\\
+    Pikku kakkosen Ransu\\
+\end{verse}
+}
+
+%---------------------------------
+%       Varpunen Jouluaamuna
+%---------------------------------
+
+\newcommand{\varpunen}{
+\ns{9}
+\section{Varpunen Jouluaamuna}
+\begin{verse}
+    Lumi on jo peittänyt\\
+    kukat laaksosessa.\\
+    Järven aalto jäätynyt\\
+    talvipakkasessa.\\
+    Varpunen pienoinen\\
+    syönyt kesäeinehen.\\
+    Järven aalto jäätynyt\\
+    talvipakkasessa.%\\!
+
+\poisto{
+\ns{8}
+    Pienen pirtin portailla\\ 
+    oli tyttökulta:\\
+    Tule, varpu, riemulla,\\
+    ota siemen multa!\\
+    Joulu on, koditon\\
+    varpuseni onneton,\\
+    tule tänne riemulla,\\
+    ota siemen multa!\\
+    }
+\end{verse}
+}
+
+%---------------------------------
+%       Laser
+%---------------------------------
+
+\newcommand{\laser}{
+\ns{9}
+\section{Laser}
+\begin{verse}
+    Ensimmäinen laser kehitettiin\\
+    Yhdysvalloissa vuonna 60\\
+    Laseria käytetään muun muassa\\
+    CD-levyjen lukemiseen\\
+    Laseria käytetään teollisuudessa\\
+    hitsauksessa ja leikkauksessa\\
+    Lääketieteessä laseria käytetään\\
+    kirurgisiin tarkoituksiin\\!
+
+\ns{7}
+    Maailman tehokkaimmat laserit\\
+    Pystyvät noin petawatin\\
+    hetkelliseen tehoon\\
+    Vuonna 2009\\
+    Yliopiston fyysikot kertoivat aikeesta\\
+    Nostaa tehoja tuhatkertaisesti\\
+    Yhteen eksawattiin\\!
+
+\ns{8}
+    Laserin vaarallisuus perustuu\\
+    pitkään kantamaan ilmassa\\
+    Jo pienen tehon laserin säteily\\
+    voi aiheuttaa näkövaurioita\\
+    Laserit on turvallisuusluokiteltu\\
+    luokkiin I–IV\\
+    IV-laser voi polttaa iholle\\
+    palovamman hetkessä\\!
+    
+    Maailman tehokkaimmat laserit\dots\\!
+
+\ns{6}
+    Laser on monille tuttu tietokonepeleistä\\
+    Laser on monille tuttu sci-fi elokuvista\\
+    Erityisesti science fictionissa \\
+    laser esitetään usein virheellisesti\\
+    Toisin kuin Star Wars -elokuvissa,\\ 
+    lasersäde ei koskaan näy tyhjiössä\\!
+
+\ns{5}
+    Lasersäteen eteneminen on\\
+    yleensä esitetty\\
+    liian hitaana\\
+    Muistuttaen perinteisen \\
+    suorasuuntausammuksen etenemistä\\!
+    
+    Maailman tehokkaimmat laserit\dots\\
+\end{verse}
+
+\poisto{
+\ns{9}
+\subsection{Lager}
+\begin{verse}
+    Ensimmäinen lager kehitettiin\\
+    Euroopassa kakssataa vuotta sitten\\
+    Lageria käytetään muun muassa\\
+    humalatilan tukemiseen\\
+    Lageria käytetään tapahtumissa,\\
+    sitsauksessa ja approilussa\\
+    Juomapeleissä lageria käytetään\\
+    pirullisiin tarkoituksiin\\!
+
+\ns{7}
+    Ruokakaupan vahvimmat lagerit\\
+    Sisältävät noin viisi\\
+    ja puoli tilavuusprosenttia\\
+    Vuonna 2023\\
+    Kokoomuspoliitikot kertoivat aikeista\\
+    Nostaa rajoja huomattavasti\\
+    Kahdeksaan prosenttiin\\!
+
+\ns{7}
+    Lagerin vaarallisuus perustuu\\
+    sen sisältämään alkoholiin\\
+    Jo kohtuukäytössä lagerin etanoli\\
+    aiheuttaa aivovaurioita\\
+    Lagerit on turvallisuusluokiteltu\\
+    luokkiin I–IV\\
+    IV -lagerin myynti vapautettiin vuonna 18\\!
+
+    Ruokakaupan vahvimmat lagerit\dots\\!
+
+\ns{2}
+    Lager on yleisnimitys pintahiivaoluille\\
+    Lager tarkoittaa saksaksi varastoa\\!
+
+\ns{9}
+    Lagerien käyminen aloitetaan perinteisesti\\
+    noin viidestä asteesta\\
+    Lämpötila saa nousta yhdeksään asteeseen,\\
+    josta se lasketaan\\
+    takaisin viiteen.\\
+    Lämmityskierroksia voidaan käyttää useita.\\
+    (käyttää useita)\\
+    Varastointi kestää noin kolmesta viikosta\\
+    kolmeen kuukauteen.\\!
+
+    Ruokakaupan vahvimmat lagerit..
+\end{verse}}}
+
+%---------------------------------
+%       Osittaisderivaattalaulu
+%---------------------------------
+
+\newcommand{\osittaisderivaattalaulu}{
+\ns{4}
+\section{Osittaisderivaattalaulu}
+\begin{verse}
+    \textit{(säv. Baby Shark)}\\!
+    
+    Y:n suhteen dy\\
+    :,: dy, dyy, dy, dy, dy, dy, Y:n suhteen :,:\\!
+
+\ns{2}
+    X:n suhteen dx\\
+    :,: dx, dx, dxx, dx, dx, dx, X:n suhteen :,:\\!
+
+\ns{2}
+    Z:n suhteen dz\\
+    :,: dz, dz, dzz, dz, dz, zd, Z:n suhteen :,:
+\end{verse}}
+
+%---------------------------------
+%       Derivaatta nollan arvoinen
+%---------------------------------
+
+\newcommand{\derivaattanollanarvoinen}{
+\ns{7}
+\section{Derivaatta nollan arvoinen}
+\begin{verse}
+    \textit{(säv. rakkaus on lumivalkoinen)}\\!
+    Hän avannut on Matlabinsa tietokoneelleen,\\
+    valo hohkaa näytöstänsä suoraan\\
+    sieluun janoiseen.\\
+    Saa kämpässänsä koko päivän tehdä koodejaan\\
+    ja tuntea, kun hiki virtaa vaan.\\!
+
+\ns{5}
+    Hän risti kädet, käänsi paraabelin ylöspäin\\
+    ja kiitti, miten onkaan saanut laskeskella näin.\\ 
+    Aina toivoi kyllä paljon,\\
+    mutta saikin enemmän –\\
+    vaan ei yhtä tiennyt hän:\\!
+
+\ns{5}
+    Niin pienen hetken derivaatta nollan arvoinen\\
+    on niin kuin kurssiarvosanat n-fuksien.\\
+    Voi, kunpa joskus kauemmin sen\\
+    nolluus kestää vois;\\
+    dx:n tullen katoaa ja kääntyy käyrä pois.\\!
+
+\ns{4}
+    Ei koskaan kysy saapuessaan lupaa dy\\ 
+    ja muutoksensa aiheuttaa voi pienen pieni syy.\\ 
+    Kun polynomi alkaa äärettömään sukeltaa\\
+    tai lähtee ylös nousemaan.\\!
+    
+    Niin pienen hetken derivaatta\dots \\!
+
+\ns{5}
+    Näin aamu astui ikkunasta sisään huoneeseen.\\
+    Hän valvottuaan laittoi\\
+    puolipisteet kohdalleen.\\
+    Kuvaajasta katsoi miten kaunis voikaan olla f\\
+    – vaikkei ole ODE.\\!
+    
+    Niin pienen hetken derivaatta\dots\\
+    \end{verse}
+}
+
+%---------------------------------
+%       Jos eukkosi kieltää sua juomasta
+%---------------------------------'
+
+\newcommand{\eukkosi}{
+\ns{7}
+\section{Jos (e)ukkosi kieltää sua juomasta}
+\begin{verse}
+    Jos (e)ukkosi kieltää sua juomasta,\\
+    niin juo, niin juo!\\
+    Jos kieltää sua viinoja tuomasta,\\
+    niin tuo, niin tuo!\\
+    Vaan juomasta älä sinä milloinkaan lakkaa,\\
+    vaan hanki sinä itselles' parempi akka\\!
+
+\ns{2}
+    ja juo ja laula, ja juo ja laula,\\
+    ja juo ja laula ja juo ja laula, ja\dots\\!
+
+\ns{11}
+    Trink, trink, Brüderlein trink,\\
+    lass doch die Sorgen zu Haus.\\
+    Trink, trink, Brüderlein trink,\\
+    leere dein Glas mit mir aus.\\
+    Meide den Kummer\\
+    und meide den Schmertz,\\
+    dann ist das Leben ein Schertz,\\
+    du lieber Augustin.\\
+    Kauf dir ein Auto\\
+    und fahr gegen Baum,\\
+    dann ist das Leben ein Traum!\\!
+
+\ns{6}
+    Ja maisterit koulussa opettaa\\
+    ja juo, ja juo.\\
+    Kun illalla koulunsa lopettaa,\\
+    he juo, ja juo.\\
+    Kun päivällä saksaa ja matikkaa jauhaa,\\
+    niin illalla raitilla RÄYHÄÄ JA PAUHAA\\!
+
+\ns{2}
+    ja juo ja laula, ja juo ja laula,\\
+    ja juo ja laula ja juo ja laula, ja\dots\\!
+
+\ns{11}
+    Trink, trink, Brüderlein trink,\\
+    lass doch die Sorgen zu Haus.\\
+    Trink, trink, Brüderlein trink,\\
+    leere dein Glas mit mir aus.\\
+    Meide den Kummer\\
+    und meide den Schmertz,\\
+    dann ist das Leben ein Schertz,\\
+    du lieber Augustin.\\
+    Kauf dir ein Auto\\
+    und fahr gegen Baum,\\
+    dann ist das Leben ein Traum!\\!
+
+\ns{6}
+    Ja upseerit sodassa taistelee\\
+    ja juo, ja juo.\\
+    Ja teltassa pullosta maistelee,\\
+    ja juo, ja juo.\\
+    Kun taistelun melskeessä pyssyt ne paukkaa,\\
+    niin upseerit välillä pullosta naukkaa\\!
+
+\ns{2}
+    ja juo ja laula, ja juo ja laula,\\
+    ja juo ja laula ja juo ja laula, ja\dots\\!
+
+\ns{11}
+    Trink, trink, Brüderlein trink,\\
+    lass doch die Sorgen zu Haus.\\
+    Trink, trink, Brüderlein trink,\\
+    leere dein Glas mit mir aus.\\
+    Meide den Kummer\\
+    und meide den Schmertz,\\
+    dann ist das Leben ein Schertz,\\
+    du lieber Augustin.\\
+    Kauf dir ein Auto\\
+    und fahr gegen Baum,\\
+    dann ist das Leben ein Traum!  
+\end{verse}}
+
+%---------------------------------
+%       Mujinaisten valssi
+%---------------------------------
+
+\newcommand{\muinaistenvalssi}{
+\ns{10}
+\section{Muinaisten valssi}
+\begin{verse}
+    \textit{(säv. Vanhoja poikia viiksekkäitä)}\\!
+    Saimaan saaressa pikkuinen torppa,\\
+    uhraa portailla kultisti Miikkulainen,\\
+    mutta pintaan ei nouse kuin norppa, \\
+    on pettymys melkoinen.\\
+    Aallon alla se suunnisti kutsujan luo,\\
+    sille tuttua tutumpi on messu tuo. \\
+    Laulu kertoo näin mitä on yksin kun jää, \\
+    hyvin hylje sen ymmärtää.\\!
+
+\ns{4}
+    Uhrata enää ei Cthulhulle päitä,\\
+    maailma modernisoitunut on.\\
+    Muinaisjäänteitä viiksekkäitä,\\
+    mies sekä hylje kumpikin on.\\!
+
+\ns{8}
+    Saimaan saaressa pikkuinen torppa,\\
+    sinne muinaisten kulttinsa tahtonut ei.\\
+    Yksin kultisti jäi kuten norppa,\\
+    myös sen mestarin kohtalo vei.\\
+    Suuri Saimaa mut sata on hylkeitä vaan, \\
+    kohta jäljellä ei ehkä ainuttakaan. \\
+    Uhriveistänsä teroittaa Miikkulainen,\\
+    aatos mielessään hirmuinen.\\!
+
+\ns{4}
+    Uhrata enää ei Cthulhulle päitä,\\
+    maailma modernisoitunut on.\\
+    Muinaisjäänteitä viiksekkäitä,\\
+    mies sekä hylje kumpikin on.\\!
+
+\ns{8}
+    Saimaan saaressa pikkuinen torppa,\\
+    karjuu loitsuja kultisti Miikkulainen.\\
+    Uhrikivellä hengetön norppa,\\
+    makaa hiljalleen kylmentyen.\\
+    Suuri Saimaa ja alta sen lainehien,\\
+    nousee kauhu niin vanha ja lonkeroinen.\\
+    Niin on kohtalo norpan kuin Miikkulaisen,\\
+    olla sukunsa viimeinen.\\!
+
+\ns{4}
+    Viimeinkin uhrataan Cthulhulle päitä, \\
+    maailmaan palannut muinainen on.\\
+    Lounaaksi syötyjä pölkkypäitä\\
+    mies sekä hylje kumpikin on.
+\end{verse}}
+
+%---------------------------------
+%       Mandariinimies
+%---------------------------------
+
+\newcommand{\mandariinimies}{
+\ns{7}
+\section{Mandariinimies}
+\begin{verse}
+    \textit{(Säv. Mandoliinimies)}\\!
+    
+    Hei ystävä pyyhi kyyneleet,\\
+    aivan turhaan niitä teet.\\
+    Minä mandariinin perseeseeni \\
+    saan mahtumaan,\\
+    vaik se hiukan kirpaisee,\\!
+    
+    :,: kun mandariinin tunkee anukseen. :,:\\!
+
+\ns{5}
+    On mandariinimiehen perse tää,\\
+    niin täynnä hedelmää,\\
+    että joskus unohtaa voi \\
+    kuinka pystyis paksantaan\\
+    taikka edes istumaan,\\!
+    
+    :,: kun manadriinin salakuljettaa. :,:\\!
+
+\ns{2}
+    Aijaijaijai \dots Mehut sullu jossain juon.\\
+    Aijaijaijai \dots Jännäkakan sulle tuon.\\!
+
+\ns{4}
+    Minä mandariinin sinne laittaa\\
+    voin tietenkin,\\
+    ehkä jopa melonin.\\!
+    :,: Ne sulle tuon kun saavun takaisin. :,:
+\end{verse}}
+
+%---------------------------------
+%       Se toinen mandariinilaulu
+%---------------------------------
+
+\newcommand{\setoinenmandariinilaulu}{
+\ns{6}
+\section{Se toinen mandariinilaulu}
+\begin{verse}
+    \textit{(säv. Mitä kuuluu Marja-Leena)}\\!
+    
+    Mitä kuuluu, mandariini? I'm sorry,\\
+    Että perseeseen tungen sut vieläkin\\
+    Tänä iltana tyhjeni hedelmäkori\\
+    Kun sun karheaa kuorta mä katselin\\!
+
+\ns{4}
+    Sua perseessä kuljetin salaisesti\\
+    Koska olit niin ujo ja hiljainen\\
+    Ehkä juuri siksi näin kauan kesti\\
+    Ennen kuin mä kehtasin kertoa sen\\!
+
+\ns{6}
+    :,:Mitä kuuluu mandariini\\
+    Et oo mikään appelsiini\\
+    Et kiivi tai rypäle onneton\\
+    Mitä kuuluu mandariini\\
+    Kun tungen sinut rektumiini\\
+    olen täysinäinen ja huoleton.:,:
+\end{verse}}
+
+%---------------------------------
+%       Mandariini hunningolla
+%---------------------------------
+
+\newcommand{\mandariinihunningolla}{
+\ns{10}
+\section{Mandariini hunningolla}
+\begin{verse}
+Herään vieraassa perseessä\\
+ja mietin miten outoa\\
+ois kertoa tuolle kummalliselle miehelle\\
+että olen elintarvike\\
+Ja miten vaikee ois selittää\\
+et miten menen pilalle\\
+jos minut tunkee anukseensa, se ei toimi\\
+saatan sinne jäädä jumiinkin –\\
+sen tietävän sun tahtoisin\\!
+
+\ns{5}
+Ja mä mietin, kuinka mä mahduinkin\\
+sinne peräreikääsi mä lailla vesimelonin\\
+Otin tietoisen riskin, kun ahtauduin\\
+:,: Olin mandariini hunningolla :,:\\
+Olin mandariini hunningolla\dots\\
+\end{verse}}
+
+%---------------------------------
+%       Volga
+%---------------------------------
+
+\newcommand{\volga}{
+\ns{5}
+\section{Volga}
+\begin{verse}
+Volga, rantaan sen ratsastaa\\
+Ivan ja Katjusha, pitkä on tie.\\ 
+Volga, pelasta rakkaus.\\
+Näytä sen oikeus, turvaan se vie.\\!
+
+\ns{4}
+Nyt Ivan piiskaa ratsua juoksuun,\\
+ja tsaarin miehet kannoilla on\\
+ja pikku Katjan hiusten tuoksuun\\
+sekoittuu pelko niin mittaamaton.\\!
+
+\ns{4}
+Volga, Volga, rakkaus tai kuolema\\
+pelkoa ja vainoa ohohohoho, hei!\\
+Volga, Volga villinä ja vapaana\\
+sua ei voi vangita, ahahahaha, hei!\\!
+
+\ns{4}
+Volga, Volga, rakkaus tai kuolema\\
+pelkoa ja vainoa, ohohohoho\\
+Volga, Volga, näytä meille Kaspia,\\
+siellä oomme turvassa, ahahahaha\\!
+
+\ns{4}
+Volga, yötä vain odottaa\\
+Ivan ja Katjusha, hulluksi saa.\\
+Volga, ratsu jo huohottaa\\
+täytyykö luovuttaa? Ei milloinkaan!\\!
+
+\ns{4}
+He eivät koskaan näkisi merta\\
+Siis Ivan kääntyy hyökkääjää päin\\
+ja Volgan liejuun sekoittuu verta\\
+sen virta kuljettaa Kaspiaan näin\\!
+
+Volga, volga\dots\\
+
+(Volga! volga!)\\
+
+\ns{4}
+Jos emme koskaan näkisi merta,\\
+niin jäätkö silloin vierellein mun?\\
+Jos emme koskaan näkisi merta,\\
+niin loppuun asti mä aina oon sun.\\!
+
+Volga, volga\dots \\!
+
+\ns{5}
+Volga, Volga, rakkaus tai kuolema\\
+pelkoa ja vainoa, ohohohoho\\
+Volga, Volga villinä ja vapaana.\\
+Sua ei voi vangita, ahahahaha.\\
+(Hei!)
+\end{verse}}
+
+%---------------------------------
+%       Mies ulos sinusta
+%---------------------------------
+
+\newcommand{\miesulossinusta}{
+\ns{10}
+\section{Mies ulos sinusta}
+\begin{verse}
+    \textit{(säv. I’ll make a man out of you)}\\!
+    Mennään alas bisneksiin\\
+    päihittään se Hans!\\
+    Lähettikö ne mulle tyttärii\\
+    kun mä halusin poikii?\\
+    Te ootte surkein nippu ikinä,\\
+    mut mä helvetin varma oon;\\
+    Vielä mä susta teen miehen\\
+    (PERKELE)\\!
+
+\ns{7}
+    Mieli niinku metsä,\\
+    mutta faija sisälläin.\\
+    Kun sä löydät keskuksen,\\
+    oot varmasti voittajain!\\
+    Ootte paskaa silkkaa kengänpohjankuraa,\\
+    ettekä saatana tajua mitään!\\
+    Jotenkin teistä mä mieheteen.\\!
+
+\ns{6}
+    Mä en saa henkeä.\\
+    Taidan kuolla tänä yönä.\\
+    Mä oon tyhmä kun en käynyt salilla.\\
+    Mä en nää mun silmiäni!\\
+    Mulla on kimeä ääni.\\
+    Helvetin hyviä makkaroita!\\!
+
+\ns{7}
+    (Be a man!)\\
+    Käyt nopee hakeen ne juoksukaljat.\\
+    (Be a man)\\
+    Kaadat mennes kaikki oot kuin tulva.\\
+    (Be a man!)\\
+    Sytytä kämppäs palaan se on voimaa.\\
+    Sä oot niin salaperäinen kuin puolikuu!\\!
+
+\ns{7}
+    Aika juoksee meitä vastaan,\\
+    kun se Hans saapuu!\\
+    Kuule minun käskyni,\\
+    niin sä ehkä selviit!\\
+    Sä et oo puvustettu sotaan raivoisaan,\\
+    Pakkaa ylös ja painu vittuun!\\
+    Miten mä susta teen miehen?!?!\\!
+
+\ns{2}
+    :,: (Be a man)\\
+    Käyt nopee hakeen ne juoksukaljat\dots :,:
+\end{verse}}
+
+%---------------------------------
+%       Sauron
+%---------------------------------
+
+\newcommand{\sauron}{
+\ns{10}
+\section{Sauron}
+\begin{verse}
+    \textit{(säv. Dirlanda)}\\!
+
+    Oot silmämuna luometon.\\
+    \textit{(daa dirlan dirlan daa)}\\
+    Missä sun silmäripset on?\\
+    \textit{(daa dirlan dirlan daa)}\\
+    On räpyttely mahdoton.\\
+    \textit{(daa dirlan dirlan daa)}\\
+    Siks katsees verestävä on.\\
+    \textit{(daa dirlan dirlan daa)}\\!
+ 
+    On hahmosi sun liekeissä.\\
+    \textit{(daa dirlan dirlan daa)}\\
+    On örkkiorjat vieressä.\\
+    \textit{(daa dirlan dirlan daa)}\\
+    Ne valmiita on poistamaan,\\
+    \textit{(daa dirlan dirlan daa)}\\
+    jos roskan pupillille saat.\\
+    \textit{(daa dirlan dirlan daa)}\\!
+ 
+    Sä haluat sen sormuksen.\\
+    \textit{(daa dirlan dirlan daa)}\\
+    Nazgulit sitä etsien,\\
+    \textit{(daa dirlan dirlan daa)}\\
+    kolunneet koko mantereen.\\
+    \textit{(daa dirlan dirlan daa)}\\
+    Mut sitä tajua mä en,\\
+    \textit{(daa dirlan dirlan daa)}\\!
+ 
+    jos saisitkin sä sormuksen,\\
+    \textit{(daa dirlan dirlan daa)}\\ 
+    niin mihin laittaisit sä sen?\\
+    \textit{(daa dirlan dirlan daa)}\\ 
+    Se silmältäsi lipsahtaa.\\
+    \textit{(daa dirlan dirlan daa)}\\
+    Tuomiorotkoon tipahtaa.\\
+    \textit{(daa dirlan dirlan daa)}\\!
+\end{verse}}
+
+%---------------------------------
+%       Vanhusten pöytä
+%---------------------------------
+
+\newcommand{\vanhustenpoyta}{
+\ns{6}
+\section{Vanhusten Pöytä}
+\begin{verse}
+    \textit{(säv Syntisten pöytä)}\\!
+    Kun et piittaa enää säännöistä mitään\\
+    Kun et jaksa enää puheita pitää\\
+    Tule luoksemme\\
+    Kaljat on jo avattu\\!
+
+\ns{6}
+    Tääl ei tarvi pelkää Seren sauvaa\\
+    Järjestys tuskin pysyy kauvaa\\
+    Tänne ennenkin\\
+    Sakkoja on jaettu\\
+    Tarjolla on muutakin kun samaa näytelmää\\
+    Ja jos sä autolla saavuit, se auto jää!\\!
+
+\ns{12}
+    Aktiiveita, toimareita,\\
+    ännän vuoden Teekkareita\\
+    Kauan sitten loppuun asti\\
+    omat hommat hoitaneita\\
+    Mä lupaan että on hauskempaa meil\\
+    Jotka löytää vanhusten pöytään\\
+    Parhaat puvut, parhaat jutut, \\
+    et tuu meidän kanssa väsyyn\\
+    Omat pullot, omat säännöt,\\
+    omat biisit laululäsyyn\\
+    Kuitenkin kännissä perseillä tahdot \\
+    Siis istu vanhusten pöytään!\\!
+
+\ns{4}
+    Kun et kaipaa huoneenlämpöistä safkaa\\
+    Tai kuunnella kun joku mainostaa lafkaa\\
+    Tule luoksemme\\
+    Korkki on jo tallottu\\!
+
+\ns{8}
+    Meil on täällä kuriton seurakunta\\
+    Jonka menosta muut näkee vaan unta\\
+    Mun viereen on\\
+    Paikka sulle plassattu\\
+    Jos joku teistä kokee \\
+    tunnelman jo lässähtäneen\\
+    Heittäköön pöytäämme tänne \\
+    sen ensi kiertopuheen!\\!
+
+\ns{11}
+    Mandariini, metsäkukka,\\
+    varpunen ja undulaatti\\
+    Meil on oma vakituinen toivelauluautomaatti\\
+    Mä lupaan että on hauskempaa meil\\
+    Jotka löytää vanhusten pöytään\\
+    Tosikoita, kuivii suita,\\
+    meil ei tarvii nähdä nuita\\
+    Ruokatauon jälkeen saadaan\\
+    konferenssipuheluita\\
+    Mä lupaan että on hauskempaa meil\\
+    Jotka löytää vanhusten pöytään!\\!
+
+\ns{4}
+    Jos valtasi ois\\
+    En tiskiltä käännyttäis ketään pois\\
+    Kai korkata saan\\
+    Kun Haudalla vielä lauletaan\\!
+
+\ns{12}
+    Aktiiveita, toimareita, \\
+    ännän vuoden Teekkareita\\
+    Kauan sitten loppuun asti\\
+    omat hommat hoitaneita\\
+    Mä lupaan että on hauskempaa meil\\
+    Jotka löytää vanhusten pöytään\\
+    Parhaat puvut, parhaat jutut, \\
+    et tuu meidän kanssa väsyyn\\
+    Omat pullot, omat säännöt, \\
+    omat biisit laululäsyyn\\
+    Mä lupaan että on hauskempaa meil\\
+    Jotka löytää vanhusten pöytään!
+\end{verse}}
+
+%---------------------------------
+%       Amor Inifnitus
+%---------------------------------
+\newcommand{\amorinfinitus}{
+\ns{9}
+\section{Amor Infinitus}
+\begin{verse}
+    Claudius,\\
+    Nero,\\
+    Titus,\\
+    Aurelius,\\
+    Caesar,\\
+    Vralianus,\\
+    Meireles;\\
+    Amor infinitus\\!
+
+\ns{8}
+    Please, please don't go\\ 
+    Don't tell me that it's over\\
+    Why do you go\\
+    Tears are in my eyes\\
+    Fade away, fade away, don't fade away\\
+    Please tell me that you stay\\
+    That you stay with me forever\\
+    Don't fade away\\!
+
+\ns{2}
+    :,: Dundundundundudundundun\\
+    Dundundundundudundundun :,:\\!
+
+\ns{8}
+    Please, please don't go\\
+    Don't tell me that it's over\\
+    Why do you go\\
+    Tears are in my eyes\\
+    Fade away, fade away, don't fade away\\
+    Please tell me that you stay\\
+    That you stay with me forever\\
+    Don't fade away\\!
+
+\ns{3}
+    Claudius, Nero, Titus\\
+    Aurelius, Caesar, Traianus;\\!
+    Amor infinitus\\!
+
+\ns{3}
+    :,: Dyy dyy dyy dyy dyy dyy dyy dyy\\
+    dyy dyy dyy dyy dyy\\
+    Amor infinitus :,:\\
+
+\ns{2}
+    :,: Dundundundundudundundun\\
+    Dundundundundudundundun :,:\\!
+
+\ns{2}
+    :,: Oooh oooh oooh oo-oo aah woo-woooh\\ 
+    Oooh oooh oooh oo-oo aah woo-woooh :,:\\
+
+\ns{3}
+    :,: Dundundundundudundundun\\
+    Dundundundundudundundun :,:\\
+    (Don't fade away)\\!
+
+    Amor infinitus
+\end{verse}}
+
+%---------------------------------
+%       Onomatopoettinen alkoholiliike
+%---------------------------------
+
+\newcommand{\onomato}{
+\ns{5}
+\section{Onomatopoeettinen alkoholiliike}
+\begin{verse}
+    :,: Kana sanoo kot kot kot kot kot kot :,:\\
+    :,: Kuinka kana sanoo? :,:\\
+    Kuinka kana sanoo Cabana?\\
+    Kana sanoo kot kot kot kot kot kot.\\!
+
+\ns{4}
+    :,: Karhu sanoo mur mur mur mur mur mur :,:\\
+    :,: Kuinka karhu sanoo? :,:\\
+    Kuinka karhu sanoo Karhu?\\
+    Karhu sanoo mur mur mur mur mur mur\\! 
+
+\ns{4}
+    :,: Gorilla sanoo ärrhg ghräghgrr :,:\\
+    :,: Kuinka gorilla sanoo? :,:\\
+    Kuinka gorilla sanoo Carillo?\\
+    Gorilla sanoo ärrhg bundolo.\\!
+
+\ns{2}
+    Ketulla on krapula, niin myös madolla;\\ 
+    Kaikki ne voit tavata Alkon jonossa!\\!
+
+\ns{4}
+    :,:Kirahvi sanoo öri öri öri öri öri öri :,:\\
+    :,: Kuinka kirahvi sanoo? :,:\\
+    Kuinka kirahvi sanoo Kahvi - likööri?\\ 
+    Kirahvi sanoo öri öri öri öri öri öri\\!
+
+\ns{2}
+    Siili käyttää aineita, niin myös etana;\\
+    Heitä et voi tavata Alkon jonossa!\\
+
+\ns{4}
+    :,: Kiiski sanoo \dots \dots :,:\\a
+    :,: Kuinka kiiski sanoo? :,:\\
+    Kuinka kiiski sanoo Whisky?\\
+    Kiiski sanoo \dots \dots\\!
+
+\ns{4}
+    :,: Siittiö sanoo ptlqm ptlqm :,:\\
+    :,: Kuinka siittiö sanoo? :,:\\
+    Kuinka siittiö sanoo I love you?\\ 
+    Siittiö sanoo ptlqm ptlqm.
+\end{verse}}
+
+%---------------------------------
+%       Sahtilaulu
+%---------------------------------
+
+\newcommand{\sahtilaulu}{
+\ns{8}
+\section{Sahtilaulu}
+\begin{verse}
+    :,: Oi ihmislapset \\ 
+    te kuunnelkaa, kun teille \\
+    lapset soittaa maan. :,:\\
+    :,: On kevyt askel, vie mukanaan,\\
+    kun kutsuu rannalle,\\
+    tuo soitto loitto kutsuu\\
+    rannalle tanssimaan. :,:\\!
+
+\ns{7}
+    :,: On kesä viimein\\
+    se juovuttaa, ei kenkään\\
+    kaamosta muistakaan. :,:\\
+    :,: Näin mahla kahleensa kirvoittaa,\\
+    se virtaa valloillaan,\\
+    saa vaisunkin raisuksi\\
+    rannalle tanssimaan. :,:\\!
+
+\ns{6}
+    :,: On saatu sahti\\
+    se vahvistaa, ja jalkain tahtia kannustaa.:,:\\
+    :,: Ei ykskään vahtia toista saa!\\
+    On mahti maltaalla,\\
+    soi viulu, kiulu kiertää,\\
+    yhdessä tanssitaan. :,:\\!
+
+\ns{8}
+    :,: Was wollen wir trinken\\
+    sieben Tage lang\\
+    Was wollen wir trinken? So ein Durst :,:\\
+    :,: Es wird genug für alle sein\\
+    Wir trinken zusammen,\\
+    roll das Fass mal rein!\\
+    Wir trinken zusammen,\\
+    nicht allein :,:\\
+\end{verse}}
+
+%---------------------------------
+%       Toppila
+%---------------------------------
+
+\newcommand{\toppila}{
+\ns{9}
+\section{Toppila}
+\begin{verse}
+    \textit{(säv. Mumbasa)}\\!
+
+    Jäi Toppilaan\\
+    vain pala eläjää.\\
+    En Toppilaan\\
+    nyt vittu enää jää!\\
+    Kylmän, kostean,\\w
+    minä tunsin Toppilan\\
+    Mulle douppia tarjoovan.
+\end{verse}}
+
+%---------------------------------
+%       Oulumaa
+%---------------------------------
+
+\newcommand{\oulumaa}{
+\ns{6}
+\section{Oulumaa}
+\begin{verse}
+    \textit{(säv. Joulumaa)}\\!
+    Pohjois-Pohjanmaalta löytyy erikoinen paikka\\
+    Siellä paska haisee sekä soi vain balalaikka\\
+    Jos mä siellä kännipäissä suistun pyörätieltä \\
+    itsestäni etsittävä on mun oulumieltä!\\!
+
+\ns{4}
+    Oulumaassa iloisuus on pelkkää toiveunta\\
+    Oulumaa on mielipahan Kolmas valtakunta\\
+    Eikä siellä mielenterveys kovin kauan kestä\\
+    ellei sitä hanajuomat joka ilta estä\\!
+
+\ns{6}
+    Kalevasta lukea voi paljon oululaista\\
+    Kuinka haaveet murskautuu\\
+    ja on niin paskamaista\\
+    Pulveriksi jos ei mylly Juttutuvan jauha\\
+    Hirttoköydeks riittää pelkkä\\
+    varsikengän nauha\\!
+
+\ns{5}
+    Oulumaa on muutakin kuin\\
+    kaupunni ja paskaa\\
+    Olennaista on myös että aina tuulee vastaan\\
+    Eikä matka Sykkelillä kovin kauan kestä:\\
+    Pian pyörä löytyy Merikosken syvyydestä\\!
+
+\ns{5}
+    Oulumaa saa kuulla ainakaiken pillaavansa\\
+    Eikä sitä kukaan koskaan tiedä tillaavansa\\
+    Kisko päkki tähtiä ja vaihda Voiman puolta\\
+    vertaukset yön pimeydelle\\
+    voivat tuottaa huolta\\!
+
+\ns{6}
+    Torimessu peruttu, se meni penkin alle\\
+    Kun Kärpät jälleen kendomatsin\\
+    hävis Tapparalle\\
+    Oulun suurin kultti silti uskollisna palvoo\\
+    Jotta kaikki muutkin öisin\\
+    tahtomattaan valvoo\\!
+
+\ns{4}
+    Oulumaassa oleminen mielenrautaa kysyy\\
+    Laita silmät kiinni mutta Oulu on ja pysyy\\
+    Perämeren kukka on ja Valkea sen emi\\
+    Jos ei kelpaa naapuriss’ on Raahe sekä Kemi!\\
+\end{verse}}
+
+%---------------------------------
+%       Oululainen baarikierros
+%---------------------------------
+
+\newcommand{\oululainenbaarikierros}{
+\ns{6}
+\section{Oululainen baarikierros}
+\begin{verse}
+    \textit{(Säv. Ajetaan me tandemilla)}\\!
+    
+    Minä tulin Kuutiosta, \\
+    Labrasta ja Dixonista \\ 
+    Graalista ja Kul(u)masta\\
+    Katsoit kuinka suuntaa hain\\!
+
+\ns{4}
+    Merikulman suuntamilla \\
+    Etsiskelin häppäreitä\\
+    Poke älä mua pois sää heitä\\
+    Vielä seison jaloillain\\!
+
+\ns{4}
+    Kontataan me Maikkelissa\\
+    Kirotaan ja yrjeskellään\\
+    Hevimestan laitamilla\\
+    Mietitään mistä taas herätään\\!
+
+\ns{4}
+    Olen käynyt Leskisessä\\
+    Petrellissä, Otto K.:ssa\\
+    Mietiskelin aina missä \\
+    syy on etten jäädä voi\\!
+
+\ns{4}
+    Puku päällä Kauppurissa\\
+    Kevyesti hunningolla\\
+    Kaarlenholvin lattialla\\
+    Portsarille sanoin: “Hei!”\\!
+
+\ns{4}
+    Kumosin mää salmareita\\
+    kiskoin kossupattereita\\
+    Lipittelin valkkareita \\
+    Kunnes tolkku tummentui\\!
+
+\ns{4}
+    Lensin ulos Ilonasta\\
+    sekä Mallaskellarista\\
+    yhdeksältä lervatessa \\
+    Sarkka vihdoin avautui!\\!
+
+\ns{4}
+    Kontataan me Maikkelissa\\
+    Kirotaan ja yrjeskellään\\
+    Hevimestan laitamilla \\
+    Mietitään mistä taas herätään\\
+\end{verse}}
+
+%---------------------------------
+%       Tuuppa tänne ouluun!
+%---------------------------------
+
+\newcommand{\tuuppatanneouluun}{
+\ns{10}
+\section{Tuuppa tänne Ouluun}
+\begin{verse}
+    Tuuppa tänne Ouluun!\\!
+
+    Kylmä merituuli aina tuulee\\
+    Luihin ja ytimiin\\
+    Toppatakissa kesät ja talavet\\
+    Rahat hassattiin (Kivisydämeen)\\
+    Pohjoisen Espoo\\
+    Viihdyt jos olet insinööri\\
+    Peltomarkettien paratiisi\\
+    Paska kaupunni\\!
+
+\ns{3}
+    Täällä jotenkin pystyy olemaan\\
+    Oma myrtyny itsensä\\
+    Voi olla öllötellä ja juoppasta ölppösiä\\!
+
+\ns{7}
+    Tuuppa tänne Ouluun\\
+    Niin tiedät mikä on ankeata\\
+    Kaupoissa myydään vain mustaa ja harmaata\\
+    Sua töllätään siksi että olet olemassa\\
+    Ja linnutkin laulaa mollissa\\
+    Että kohta kuollaan\\
+    Nii että tulukaa Ouluun!\\!
+
+\ns{7}
+    Rotuaarilla oleva\\
+    Kivipallo on kiva\\
+    Pukeutuminen Väinämöisen aikaista\\
+    Selekeät vuojenajat\\
+    Kuus kuukautta täysin pimeää\\
+    Winter cycling capital\\
+    Of the world\\!
+
+\ns{3}
+    Kyllä aurinko lyhimmänkin\\
+    Päivän aikana hieman käy\\
+    Kurkistamassa ihan kuin vittuillakseen\\!
+    
+    Tuuppa tänne Ouluun\dots\\!
+
+\ns{4}
+    Oulussa opiskelijat on tervejärkisiä\\
+    Ja kusipäitä paljon vähemmän\\
+    Suhteutettuna opiskelijamäärään\\
+    Ja pitserioita on paljon\\!
+
+\ns{10}
+    Tuuppa tänne Ouluun\\
+    Niin tiedät mikä on ankeata\\
+    Kaupoissa myydään vain mustaa ja harmaata\\
+    Tehdas levittää kotoisaa paskanhajua\\
+    Kauppakeskus keskelle kävelykatua\\
+    Metallimiehiä, bensalenkkareita\\
+    Liikutaan porojen vetämissä pulkissa\\
+    Linnutkin laulaa mollissa\\
+    Että kohta kuollaan\\
+    Nii että tulukaa Ouluun!
+\end{verse}}
+
+%---------------------------------
+%       Kuka kakkaa altaaseen?
+%---------------------------------
+
+\newcommand{\kukakakkaaaltaaseen}{
+\ns{9}
+\section{Kuka kakkaa altaaseen?}
+\begin{verse}
+    \textit{(säv. Kuka keksi rakkauden)}\\!
+    
+    Linnanmaalla polskiessa näin\\
+    tummien paakkujen uivan minua päin.\\
+    Ne kloorivesi pintaan sai.\\
+    Joltain perverssiltä\\
+    on venttiili valskannut kai\dots ?\\
+    Saadaanko vastaus kysymykseen;\\
+    Kuka kakkaa altaaseen?\\!
+
+\ns{7}
+    Sarjakakkaajasta lukea taas saan.\\
+    Se kaupungin halleja piinaa ulosteellaan.\\
+    Allas taas kerran tyhjentyy.\\
+    Heikko sulkijalihas on siihen ainoa syy!\\
+    Eikä saada vastausta kysymykseen;\\
+    Hei kuka kakkaa altaaseen?\\
+    On Oulu saatu polvilleen.\\!
+
+\ns{5}
+    Se pokkana porteista sisään kulkee\\
+    Ei sitä saada loppumaan millään\\
+    Saunasta speedoissaan se hiippailee\\
+    Kaakeleissa taas jäljet nään\\
+    Joku kakkaa altaaseen\\!
+
+\ns{7}
+    Ei se aio antautuu.\\
+    Uppotukit poolin reunoille rantautuu.\\
+    Ei ne sitä varmaan kiinni sais,\\
+    vaikka niskaan se hyppytornista pommittais.\\
+    Mä tyydyn vastaukseen;\\
+    Joku kakkaa altaaseen.\\
+    Oih mä järviveteen uimaan meen\dots
+\end{verse}}
+
+%---------------------------------
+%       Kopille
+%---------------------------------
+
+\newcommand{\kopille}{
+\ns{6}
+\section{Kopille}
+\begin{verse}
+    \textit{(säv. Kalliolle kukkulalle)}\\!
+
+    Linnanmaalle, Lipastolle\\
+    Rakennettu on koppimme\\
+    Tule tule fuksi nuori\\
+    jakamaan se kanssani\\!
+
+\ns{4}
+    Jollen sua mukaani saa\\
+    niin lähden silti kopille\\
+    meidän maille kellariimme\\
+    etten opiskella vois
+\end{verse}}
+
+%---------------------------------
+%       Kopin raja
+%---------------------------------
+
+\newcommand{\kopinraja}{
+\ns{8}
+\section{Kopin raja}
+\begin{verse}
+    \textit{(säv. Joku raja - PMMP)}\\!
+
+    Aamulla tuntuu raskaalta pää.\\
+    Hirvee hedari pääs jyskyttää.\\
+    Eilen meni vähän taas myöhään,\\
+    appropäivä.\\
+    Pikakahvi ei auta mitään.\\
+    Kolmenkin kupin jälkeen väsyttää.\\!
+
+\ns{3}
+    Menen suihkuun.\\
+    Pesen hampaat.\\
+    Hirvee darra.\\!
+
+\ns{4}
+    Varhain Kopilla vilkasta jo.\\
+    Fuksit odottaa, aukeaako\\
+    ovi kanttiinin tuo ollenkaan.\\
+    Niil on kiire.\\!
+
+\ns{4}
+    Viimeisenä luennolla taas.\\
+    Pitäisi toiseen alaan vaihtaa:\\
+    teekkariksi, kylteriksi,\\
+    humanistiks.\\!
+
+\ns{2}
+    Näitä päiviä on jo liikaa.\\
+    Vastaava Kopilla muistuttaa:\\!
+
+\ns{7}
+    "Jos et tiskaa tiskejäs, minä etin sut\\
+    ja isken kättees tiskiharjan,\\
+    jospa sit valaistut!"\\
+    Aamusta iltaan Captain Kirkki soi\\ 
+    taikka Perjantai. \\
+    Ännännet sekä fuksit tenteistään\\ 
+    jälleen hylsyt sai.\\!
+
+\ns{6}
+    Omaope sävyyn säälivään:\\
+    "Oma vika kun noppii et nää",\\
+    mutten tiedä enää itsekään,\\
+    mitä teen tääl.\\
+    En ole maisteri tai kandikaan,\\
+    kotikissa Kopin sohvalla.\\!
+
+\ns{7}
+    "Jos et tiskaa tiskejäs, minä etin sut!"\\
+    Ja vanhat jauhaa, \\
+    miksei mitään tee meidän hallitus.\\
+    Aamusta iltaan soi Initial D\\
+    taikka Perjantai.\\
+    Ännännet sekä fuksit tenteistään\\
+    jälleen hylsyt sai.\\!
+
+\ns{5}
+    Päästäisitkö läpi kurssin,\\
+    jos mä kerran vielä tentin?\\
+    Mutta Koppi\\
+    vangiks otti.\\
+    Valmistu en täältä koskaan!\\!
+
+\ns{7}
+    "Jos et tiskaa tiskejäs, minä etin sut!"\\
+    Kun siivouspäivä koittaa,\\
+    jokainen onkin kadonnut.\\
+    Aamusta iltaan Pätkis munkki soi\\
+    taikka Perjantai.\\
+    Ännännet sekä fuksit tenteistään\\
+    jälleen hylsyt sai.
+\end{verse}}
+
+%---------------------------------
+%       Kaijon valot
+%---------------------------------
+
+\newcommand{\kaijonvalot}{
+\ns{7}
+\section{Kaijon valot}
+\begin{verse}
+    \textit{(Säv. Shangahin valot)}\\!
+
+    Ootko koskaan nähnyt Kaijon valoja\\
+    Apinapatsasta tai Teekkaritaloa\\
+    Ja tänä yönä, kun jallun auki narautan\\
+    en kaipaa Mangoon enkä Graaliin\\
+    mä pistän peltikatot tiskiin\\!
+
+\ns{4}
+    Siis loistakoon Kaijon valot\\
+    Ja valaiskoon yötä Teekkaritalo\\
+    Mä avaan korkin ja kippaan\\
+    peltikaton toisenkin\\!
+
+\ns{5}
+    Ootko nähnyt Kuution karaokea\\
+    aamuisin spurguja, niin vapisevia\\
+    Mut tänä aamuna ei maistu Foodoon silakat\\
+    Nyt kaljan kiireel auki korkkaan\\
+    ja Baabelista otan känkyn mukaan\\!
+
+\ns{4}
+    Siis loistakoon Kaijon valot\\
+    Ja valaiskoon yötä Teekkaritalo\\
+    Mä avaan korkin ja kippaan\\
+    peltikaton kolmannen\\!
+
+\ns{4}
+    Siis loistakoon Kaijon valot\\
+    Ja valaiskoon yötä Teekkaritalo\\
+    Mä avaan korkin ja kippaan\\
+    peltikaton neljännen\\
+\end{verse}}
+
+%---------------------------------
+%       Ukkometso
+%---------------------------------
+
+\newcommand{\ukkometso}{
+\ns{9}
+\section{Ukkometso}
+\begin{verse}
+    Katto kallellaan siinä kuusen alla.\\
+    Seisoo vielä mökki paikallaan.\\
+    Kun ostokeskuksen ohi kuljen, tiedän sen\\
+    kohta tullut oon Ukkometsoon.\\
+    Hei tarjoilija, tuokaa mulle kolpakko,\\
+    yhtä kylmä niinkuin aina ennenkin.\\
+    Mullon kova jano taas\\
+    ja paksu lompakko.\\
+    En turhaan tullut oo Ukkometsoon.\\!
+
+\ns{5}
+    Suomen niemellä, suomen kielellä\\
+    äijät huutaa lailla perkeleen.\\
+    Ja kun Suomi pelaa lätkää,\\
+    se iskee joka jätkään.\\
+    Kaljaa koneeseen ja Ukkometsoon.\\!
+
+\ns{6}
+    No Ukkometson Liisaa me\\
+    katsellaan ku viinaa.\\
+    Juodaan ja me tullaan humalaan.\\
+    Liisalla on povi,\\
+    kuin kuninkaitten hovi.\\
+    Sen edessä on pakko kumartaa.\\!
+
+\ns{5}
+    On Ukkometson ilta ja kohta kamarilta\\
+    meitä tullaan pois jo hakemaan.\\
+    Me eletään vain kerran.\\
+    Ei meitä pelko herran\\
+    saa JUMALAUTA hiljaa juhlimaan!\\!
+
+    Suomen niemellä, Suomen kielellä\dots\\!
+
+\ns{4}
+    No Reiska laittaa soimaan vielä yhden laulun\\
+    ja itkee sitten yhden kyyneleen.\\
+    Se laulu kertoo meistä onnen enkeleistä,\\
+    jotka pohjantähden alla asustaa.\\!
+
+\ns{5}
+    On Ukkometson ilta ja kohta kamarilta\\
+    meitä tullaan putkaan hakemaan.\\
+    Me eletään vain kerran\\
+    ei meitä pelko herran\\
+    saa JUMALAUTA hiljaa juhlimaan!\\!
+
+
+    :,:Suomen niemellä, Suomen kielellä\dots:,:\\
+
+    Laa-laa-la-laa-la-laa-la-laa-la-laa.\\
+    Kaljaa koneeseen ja Ukkometsoon.\\
+\end{verse}}
+
+%---------------------------------
+%       Sitsipöytä hajotettu
+%---------------------------------
+\newcommand{\sitsipoytahajotettu}{
+\ns{4}
+\section{Sitsipöytä hajotettu}
+\begin{verse}
+    \textit{(säv. Joulupuu on rakennettu)}\\!
+    
+    Laulukirja varastettu, cocktailmekko pilalla.\\
+    Pikku fuksi unohdettu, sammuneena vessassa.\\!
+
+\ns{2}
+    Sitsipöytä hajotettu lojuu salin nurkassa\\
+    Viinilasit pirstaleina pyörii kengänpohjissa.\\!
+
+\ns{2}
+    Kiitos sulle emäntämme, alkoholin lahjasta.\\
+    Huomenna en kiitä enää maatessani darrassa.\\ 
+\end{verse}}
+
+%---------------------------------
+%       Pätkis-munkki
+%---------------------------------
+
+\newcommand{\patkismunkki}{
+\ns{5}
+\section{Pätkis-munkki}
+\begin{verse}
+    :,: Pätkis\\
+    Munkki\\
+    Pätkis-munkki\\
+    Pätkis-munkki :,:\\!
+
+\ns{5}
+    päpä-pä-pä-pä-pä-pä-pä-pä-pä\\
+    Pätkis\\
+    Munkki\\
+    päpä-pä-pä-pä-pä-pä-pä-pä-pä\\
+    :,: Pätkis-munkki :,:
+\end{verse}}
+
+%---------------------------------
+%       V-laulu
+%---------------------------------
+
+\newcommand{\vlaulu}{
+\ns{5}
+\section{V-laulu}
+\begin{verse}
+    Itkettää,\\
+    ahdistaa ja pierettää ja avain kotiin on jäänyt.\\
+    On kello jo puoli ja Princekin kuoli.\\
+    Ihan paskaa on tää nyt!\\!
+
+\ns{4}
+    Herpeksen\\
+    sait sä jostain, nyt se puhjennut on alahuuleen.\\
+    On kännykkä rikki ja otsassa dikki.\\
+    Yksin huudat sä tuuleen\dots\\!
+
+\ns{4}
+    Vittu!\\
+    Vittu, että, vittu, voikin vituttaa!\\
+    Mua kiinnosta ei, älkää häiritkö hei,\\
+    ei tänne tulla saa-aa-aa-aa\\!
+
+\ns{4}
+    Vittu!\\
+    Voihan vittu pillu perseen kyrvänpää!\\
+    Menkää helvettiin nyt, oon järkyttynyt,\\
+    Jään sänkyyn itkemääään!\\!
+
+\ns{4}
+    Liiku ei\\
+    bussi, koska tielle parkkeerattu on mersu\\
+    Vielä on aamuyö, silti nakkia syö\\
+    vieressäs joku hullu\\!
+
+\ns{4}
+    Facebookkiin\\
+    ystäväsi päivittää fantastista häämatkaa.\\
+    Hätäpoistumistie ulos bussista vie.\\
+    Ihan turha on jatkaa\dots\\!
+
+\ns{4}
+    Vittu!\\
+    Vittu, että, vittu, voikin vituttaa \dots
+\end{verse}}
+
+%---------------------------------
+%       Vitutuslaulu
+%---------------------------------
+
+\newcommand{\vitutuslaulu}{
+\ns{4}
+\section{Vitutuslaulu}
+\begin{verse}
+    \textit{(säv. Oi kuusipuu)}\\!
+    :,: Voi saatana, voi perkele,  \\
+    voi jumalauta, vittu. :,: \\
+\end{verse}}
+
+%---------------------------------
+%       Vi ska dricka hela natten
+%---------------------------------
+
+\newcommand{\viskadrickahelanatten}{
+\ns{6}
+\section{Vi ska dricka hela natten}
+\begin{verse}
+    \textit{(sävel: Jos sul lysti on)}\\!
+    :,:Vi ska dricka hela natten alkohol:,:\\
+    Vi ska dricka hela natten,\\
+    vi ska inte dricka vatten\\
+    Vi ska dricka hela natten alkohol\\!
+
+\ns{4}
+    :,:Vi ska knulla hela natten bakifrån:,:\\
+    Vi ska knulla hela natten,\\
+    vi ska inte dra i handen\\
+    Vi ska knulla hela natten bakifrån\\
+\end{verse}}
+
+%---------------------------------
+%       Karrelle palanut Grandiosa meat lovers -pakastepizza
+%---------------------------------
+
+\newcommand{\grandiosa}{
+\ns{7}
+\section{Karrelle palanut Grandiosa \\ meat-lovers -pakastepizza}
+\begin{verse}
+    \textit{(säv. Karrelle palanut enkeli)}\\!
+    Rai rai rai rai rai\\
+    Rai rai rai rai rai\\
+    Rai rai rai rai rai\\
+    Rai rai rai rai rai\\!
+
+\ns{6}
+    Aamuyöllä dokaamasta kotiin taapersin\\
+    Maha kurni, silloin laitoin\\
+    jäisen lätyn uunihin\\
+    Vain hetkeks piti livahtaa\\
+    mun unten maille päin\\
+    Savumerkit minut herrätti mä nälkäiseksi jäin.\\!
+
+\ns{5}
+    Ulos hiilenmusta roiskeläppä lentää.\\
+    Parvekkeelta alas lumikinokseen.\\
+    Ei ees noki varikset, ei kelpaa haaskalinnuille.\\
+    Palo darramättöni, \\
+    saa mut haluamaan narun jatkeeksi\\!
+
+\ns{4}
+    Rai rai rai rai rai\\
+    Rai rai rai rai rai\\
+    Rai rai rai rai rai\\
+    Rai rai rai rai rai\\!
+
+\ns{7}
+    Palomestari on mulkku,\\
+    se huus mulle naamaa päin\\
+    Ajanhaaskauksesta vaahtos,\\
+    nosto syytteen mielessäin\\
+    Annoin käteen setelin, siltä sitten tivasin.\\
+    Voikko hakee mulle\\
+    Grandiosa Meat-Loverssin?\\!
+
+\ns{5}
+    Ulos hiilenmusta roiskeläppä lentää.\\
+    Parvekkeelta alas lumikinokseen.\\
+    Ei ees noki varikset, ei kelpaa haaskalinnuille.\\
+    Kaatokännin kiskaisin, \\
+    uunin kuumuus poltti jalapenotkin\\!
+
+\ns{4}
+    Rai rai rai rai rai\\
+    Rai rai rai rai rai\\
+    Rai rai rai rai rai\\
+    Rai rai rai rai rai
+\end{verse}}
+
+%---------------------------------
+%       Yöllä taas mä menin parvekkeelle nukkumaan
+%---------------------------------
+
+\newcommand{\yollataas}{
+\ns{11}
+\section{Yöllä taas mä menin\\parvekkeelle nukkumaan}
+\begin{verse}
+    \textit{(säv. Missä muruseni on)}\\!
+    
+    Yöllä taas mä menin parvekkeelle nukkumaan;\\
+    menin parvekkeelle nukkumaan.\\
+    Yöllä taas mä menin parvekkeelle nukkumaan;\\
+    menin parvekkeelle nukkumaan.\\
+    Yöllä taas mä menin parvekkeelle nukkumaan;\\
+    menin parvekkeelle nukkumaan.\\
+    Yöllä taas mä menin parvekkeelle nukkumaan;\\
+    menin parvekkeelle nukkumaan.\\!
+
+\ns{5}
+    :,: Yöllä taas\\
+    mä menin parvekkeelle nukkumaan;\\
+    menin parvekkeelle nukkumaan. :,:\\
+    Yöllä taas mä menin parvekkeelle nukkumaan;\\
+    menin parvekkeelle nukkumaan.\\
+\end{verse}}
+
+%---------------------------------
+%       Silja Line Special
+%---------------------------------
+
+\newcommand{\siljalinespecial}{
+\ns{5}
+\section{Silja Line Special}
+\begin{verse}
+    Tahtoisin ginitonicin, ginitonicin.\\
+    Tai vaikka minttufernetin, minttufernetin.\\
+    Kelpaisi kossuvissykin, kossuvissykin.\\
+    Nyt ryypätään, nyt ryypätään!\\!
+
+\ns{4}
+    Jos saisin, mitä tekisin, mitä tekisin?\\
+    Kyll’ varmaan jotain keksisin, jotain keksisin,\\
+    tai sitten kotiin juoksisin, kotiin juoksisin.\\
+    Nyt jänistää, nyt jänistää.\\!
+
+\ns{5}
+    Kun taas on naama valkoinen,\\
+    naama valkoinen.\\
+    Niin maistuu olut huurteinen, olut huurteinen.\\
+    Juon sitä kolpakollisen, kolpakollisen.\\
+    Ja oksennan, yli laidan.\\!
+
+\ns{4}
+    Voi että eilen häpesin, eilen häpesin.\\
+    Kun yhden tyypin tapasin, tyypin tapasin.\\
+    Ja sitten homman mokasin, homman mokasin.\\
+    Nyt hävettää, nyt hävettää.\\!
+    
+    Mutt’ sitten Börjen tapasin, Börjen tapasin\dots\\
+\end{verse}}
+
+%---------------------------------
+%       Sandstorm
+%---------------------------------
+
+\newcommand{\sandstorm}{\section{Sandstorm}
+\begin{verse}
+    Duuuuuuuuuuuuuuuuuuuun\\
+    Dun dun dun dun dun dun dun dun dun dun\\  
+    dundun dun dundundun\\
+    dun dun dun dun dun dun\\
+    dundun\\
+    dundun\\
+    BOOM\\
+    Dundun dundun dundun\\
+    BEEP\\
+    Dun dun dun dun\\
+    Dun dun\\
+    BEEP BEEP BEEP BEEP\\
+    BEEP BEEP BEEP BEEP\\
+    BEEP BEEP BEEP BEEP\\
+    BEEP BEEP BEEP BEEP\\
+    BEEP BEEP BOOM\\
+    Dadadadadadadadadadadadadadadadadadadada\\
+    dadadadadadadadadadadadadadadadadadadada\\
+    Dadadddaddadaddadadadddadadada\\
+    Nyu nyu nyu nyu nyu nyu nyu nyu nyu nyu nyu\\ 
+    nyu nyu nyu nyu nyu nyu\\
+    Doo doo doo doo doo doo doo doo\\
+    Nnn nn nn nn nn nn n nn nnn nn nnn nnn\\
+    nnnnnnnn\\
+    Dddddddd ddadadadadaddadadadadadadadadad\\
+    BOOM\\
+    Nya nya nya nya nya nya\\
+    BOOM\\
+    BOOM BOOM BOOM BOOM\\
+    BOOM\\
+    Nyunyunyu nyu nyu nyu nyu nyu nyu nyu nyu\\
+    Nyu\\
+    BOOM BOOM\\
+    BEEP BEEP\\
+    BEEP BEEP BEEP\\
+    Dadadadadada\\
+    Ddadad\\
+    BOOM BOOM\\
+    BEEP BEEP\\
+    BEEP BEEP BEEP BEEP\\
+    BEEP BEEP BEEP BEEP\\
+    BEEP BEEP BEEP BEEP\\
+    BEEP BEEP BEEP BOOM\\
+    (unintelligible)\\
+    Ddudndundun dun dun dun\\
+    dun dun dun dun dun dun\\
+    Dun dun dun dun dun dund\\
+    Dodododododododododododododododo\\
+    dodododododododododododododoodo\\
+    DRUM DRUM DRUM\\
+    Dodododododododododododo\\
+    dodododododododododododo\\
+    Chi chichi chi chi chih\\
+    BOOOM\\
+    Chcihcihfkdhfdisjfkla\\
+    Dododododododododododododododododododododododododododododododododododoo\\
+    SCHEW\\
+    Dododododododododododododododododododododo\\
+    Dadadaddududndundundudnudndundundundunddunfudnundudnudnudndund\\
+    BOOM
+\end{verse}}
+
+%---------------------------------
+%       Piilossa viinat
+%---------------------------------
+
+\newcommand{\piilossaviinat}{
+\ns{7}
+\section{Piilossa Viinat}
+\begin{verse}
+    \textit{(säv. Rusketusraidat)}\\!
+
+    Helvetin hyvin menee\\
+    Sä kysyt multa miksi oon vihainen\\
+    Ja kiltahuonees fukseille kiroilen\\
+    Mulla on sulle pikkuinen salaisuus\\
+    luennon jälkeen bileet noin kello kuus\\!
+
+\ns{4}
+    Heitetäänkö pois kaikki tentit ja kirjat\\
+    Lähdetään jatkoille\\
+    Näytä mulle missä sul on piilossa viinat\\
+    Mennä ei katkolle\\!
+
+\ns{5}
+    Helvetin lujaa menee\\
+    Mun kurssikaveri on tunnollinen\\
+    Se kielsi multa kunnon biletyksen\\
+    Mä mietin usein että mitä mä teen\\
+    Hankinko kotiin oman bilekoneen\\!
+
+    Heitetäänkö pois kaikki\dots\\
+\end{verse}}
+
+%---------------------------------
+%       Exculaulu
+%---------------------------------
+
+\newcommand{\exculaulu}{\section{Exculaulu}
+\ns{10}
+\begin{verse}
+    \textit{(säv. Matkalaulu)}\\!
+    Kaljat kyydissä on,\\
+    excuapinalla on viinaa.\\
+    Otin yhden gambiinan,\\
+    tutor otti kuitenkin liikaa.\\
+    Fuksia haastatellaan,\\
+    kapu on ottanut oluen.\\
+    Sedät äänessä vaan,\\
+    silloin kun on hätätilanne.\\!
+
+\ns{2}
+    Heikko veikko sammuu bussiin, \\
+    onko kellään mustaa tussii?\\!
+
+\ns{7}
+    Oulu on tuolla takanamme jossain,\\
+    mennään, mutta ei saa oksentaa.\\
+    Toivon, ettei kalja loppuis ollenkaan.\\
+    Tämä voi olla koko elämämme\\
+    viimeinen matka\\
+    gambiinaa gurlataan \\
+    Toivon että excu jatkuu, jatkuu vaan.\\!
+
+\ns{6}
+    Tätii pissatti taas,\\
+    pysähdytään n:ttä kertaa.\\
+    Samat hypermarketit,\\
+    hihnalle kaljaa ja viinaa.\\
+    Kerro meille fuksi, vitsi.\\
+    Sedät tulee iloisiksi.\\!
+
+\ns{7}
+    Oulu on tuolla edessämme jossain.\\
+    Mennään, mutta ei saa oksentaa.\\
+    Toivon, ettei kalja loppuis ollenkaan.\\
+    Tämä voi olla koko elämämme\\
+    viimeinen matka\\
+    gambiinaa gurlataan\\
+    Toivon, että excu jatkuu, jatkuu vaan.\\!
+
+\ns{5}
+    Avaan gambiinan imaan sisään kuoleman,\\
+    niin punaista, että pelottaa.\\
+    Pelkään että bussi ajaa meidät Espooseen\\
+    Mitä sitten teen?\\
+    Mitä sitten teen?\\!
+
+\ns{4}
+    Sit jos ajatellaan sitä kuka sai eilenkin.\\
+    Ties vaikka tästä seurais lapsikin.\\
+    Toisilla on joku, joka heille antaa.\\
+    Nyt ei kukaan muista, eikä tahdokkaan.\\!
+
+\ns{7}
+    Koti on tuolla edessämme jossain.\\
+    Mennään mutta juodaan vichyy vaan.\\
+    Toivon, että darra loppuis, auttakaa.\\
+    Tämä voi olla koko elämämme\\
+    viimeinen matka\\
+    täytyy oksentaa.\\
+    Toivon, että excu loppuu, loppuu vaan.\\
+\end{verse}}
+
+%---------------------------------
+%       Sörnai-gusha
+%---------------------------------
+
+\newcommand{\sornaigusha}{
+\ns{5}
+\section{Sörnai-gusha}
+\begin{verse}
+    Sörnai gusha nietu molotova,\\
+    sörnai gusha herba moskova,\\
+    :,: Njet, njet bonimai votvot risubuska,\\
+    dara zeva votvot harashoo.:,:\\!
+
+\ns{4}
+    Isä Stalin, äiti Crutzheva\\
+    isgi silmää ginihibragas’,\\
+    :,: Oi, oi oisiba vodkaa ollut heillä\\
+    oisi isgu gäynyd alemmas. :,:\\!
+
+\ns{4}
+    Tuoksuu tuomet, syreenit ja ruusut,\\
+    tuoksuu tuolla Volgan randamill’,\\
+    :,: Ai, ai, kaunis kulta Kaditzusha\\
+    tuoksuu tunteet rindas rindamil. :,:\\!
+
+\ns{4}
+    Siellä missä versoaapi vilja,\\
+    siellä kasvoi kaunis Katjuska.\\
+    :,: Katjuskalla komiat on keuhkot,\\
+    basga haisee Nevan rannalla. :,:\\!
+
+\ns{4}
+    Oon vain köyhä kolhoosinainen,\\
+    ei oo mulla yhtään ystävää.\\
+    :,: Ei ole lehmää eikä ole lammasta\\
+    eikä suussa yhtään hammasta. :,:\\!
+
+\ns{4}
+    Siperian lakeus on suuri,\\
+    Sonja siellä lunta lapioi.\\
+    :,: Sonjalla kävi hiton huono tuuri\\
+    länsituuli uutta lunta toi. :,:\\!
+
+\ns{4}
+    Oon vain köyhä poika Petroskoista, \\
+    ei oo mulla yhtään ystävää.\\
+    :,: Sirppi ja vasara ne taivahalla\\
+    loistaa, basga haisee, balalaikka soi!:,:\\
+\end{verse}}
+
+%---------------------------------
+%       Hittiputki
+%---------------------------------
+
+\newcommand{\hittiputki}{
+\ns{9}
+\section{Hittiputki}
+\begin{verse}
+    Sata kesää, tuhat yötä ainakin,\\
+    tahdon kanssasi sun\\
+    Sata kesää, tuhat yötä valvoisin\\
+    luona rakastetun\\
+    Sata kesää, tuhat yötä kaikkineen,\\
+    oisit mun omanain\\
+    Sata kesää, tuhat yötä rakkauteen,\\
+    missä milloinka vain\\!
+
+\ns{5}
+    Katson sineen taivaan, tähti kirkkain sua\\
+    Taas mä pyynnöin vaivaan, ohjaa kotiin mua\\
+    Katson sineen taivaan, tähti kirkkain sua\\
+    Taas mä pyynnöin vaivaan, ohjaa kotiin mua\\!
+    Ohjaa mua\\
+
+\ns{6}
+    Señorita por favor, \textit{oh no, no, no}\\
+    Señorita por favor, \textit{oh no, no, no}\\
+    Silloin tiesin kyllä sen, hän on juuri sellainen\\
+    Yhden illan yrittää ja jos se onnistuu, ei jää\\
+    Señorita por favor, \textit{oh no, no, no}\\
+    Señorita por favor, \textit{oh no, no, no}\\!
+
+\ns{8}
+    Se oli kauhean komea mies\\
+    Mut lääninveijari, kuka sen ties\\
+    Kuin kissa hiirtä, se kisaili näin\\
+    Sanoin sille sen naamaa päin\\
+    Ei oo (Ei oo), ei tuu\\
+    Ei tipu lämpöö, enkä saano juu (Juu-uu)\\
+    Ei mua hilpeät hidalgot vie minnekään\\
+    Se on kyllä, no thank you\\!
+
+\ns{5}
+    Oo la paloma blanca,\\
+    lintu oon taivaan ja maan\\
+    Oo la paloma blanca,\\
+    kahleeni voin unohtaa\\
+    Pois vapauttain nyt kukaan ei saa\\!
+
+\ns{8}
+    Tummat silmät, ruskea tukka\\
+    Koskaan niitä hylkäisi en\\
+    Lämpöinen on poskensa nukka\\
+    Huulillain, kun tunnen mä sen\\
+    Tummat silmät, ruskea tukka\\
+    Niihin kerran langeta sain\\
+    Syrjällään nyt on sydän rukka\\
+    Rakastan niin häntä vain\\!
+
+\ns{4}
+    Kuin varkain sydämeni vei, Eviva Espanja\\
+    Nyt kaipuu rauhaa anna ei, Eviva Espanja\\
+    Tuon kaiken silmissäni nään, Eviva Espanja\\
+    Ja kerran sinne lämpimään, mä ainaiseksi jään\\!
+
+\ns{9}
+    Niin se käy, sen voi vaistota vaan\\
+    Eikä sanojakaan ees tarvii\\
+    Rakkaus on sellainen, merkkikieli tunteiden\\
+    Ensin vähän näin vain ihastuu,\\
+    sitten yllättäin jo rakastuu\\
+    Rakkaus on sellainen, tunneleikki sydänten\\
+    Kerran kokee sen kai jokainen\\
+    Aivan niinkuin nyt me kaksi\\
+    Kaikki paremmaksi muuttui rakaste vain\\!
+
+\ns{4}
+    Vie minut, minut vie jonnekin\\
+    Vie pian, äläkä tuo takaisin\\
+    Vie kauas niin kauas kuin viedä vaan voi\\
+    Missä itkuni ilon helminä pisaroi (Hei, hei)\\!
+
+\ns{10}
+    Tom tom to-domdomdom, nyt soiton kuulen\\
+    Tom tom to-domdomdom, näin onnistuu\\
+    Tom tom to-domdomdom, I hear the music\\
+    Tom tom to-domdomdom, that's how it goes\\
+    Kun kaikille aurinko loistaa,\\
+    se kaikille yhteinen on\\
+    Se kaikilta kylmyyden poistaa,\\
+    mieli on niin huoleton\\
+    Tom tom to domdomdom, nyt soiton kuulen\\
+    Tom tom to domdomdom, näin onnistuu\\!
+
+\ns{5}
+    Luotan sydämen ääneen, luotan rohkeuteen\\
+    Elän silloin ihanasti, hetkeen viimeiseen\\
+    Luotan sydämen ääneen, sulle kuulua sain\\
+    Pysy elämäni loppuun asti omanain, omanain,\\
+    omanain\\!
+
+\ns{6}
+    Shampanjaa, tänään jokainen juo\\
+    Shampanjaa, lasit täyttäkää nuo\\
+    Ajatelkaa, jos vaikka huomenna jo halkee maa\\
+    Shampanjaa, elon maljoissa on\\
+    Shampanjaa, tänään vuoks kohtalon\\
+    Ajatelkaa, vielä iloita saa, shampanjaa\\!
+
+\ns{13}
+    El Bimbo on vain mies,\\
+    niin villi mutta aikamies\\
+    On paikan nimi San Juan,\\
+    se kuulee Bimbon nauravan\\
+    El Bimbo kam zurück (El Bimbo)\\
+    Und sah mich an mit frohem Blick\\
+    Er sprach: "Ich habe eingeseh'n\\
+    Es ist bei dir allein nur schön"\\
+    Und hier in San Juan, da ist kein Mann\\
+    Der so wie Bimbo lieb sein kann\\
+    Denn so wie ihm erging's schon\\
+    manchem großen Don Juan\\
+    Lalalaalalala lalalaalalalaa\\!
+
+\ns{7}
+    Anna mulle tähtitaivas, anna valo pimeään\\
+    Anna mulle aamurusko, anna usko elämään\\
+    Anna mulle rohkeutta, että jaksan huomiseen\\
+    Anna edes vähän, rakkautta tähän\\
+    yksinäiseen sydämeen\\
+    Anna edes vähän, rakkautta tähän\\
+    yksinäiseen sydämeen\\!
+
+\ns{8}
+    Kun kuuntelen Tomppaa\\
+    Kun kuulen kuinka rummut lyö\\
+    ja kitara komppaa\\
+    Kylmän väreen se aikaan saa ahaa, ahaa\\
+    Mä kuuntelen Tomppaa\\
+    Ja kuinka mun sydän kiihkeänä\\
+    mukana komppaa\\
+    Tassut tiikerin raapaisee, oh yeah, \textit{oh yeah}\\!
+
+\ns{5}
+    Ooh, Soley Soley (Soley ley, ley)\\
+    Soley Soley (Soley ley)\\
+    Soley Soley\\
+    Ooh Soley Soley (Soley ley)\\
+    :,: Soley Soley (Soley ley) :,:
+\end{verse}}
+
+%---------------------------------
+%       Ännännen
+%---------------------------------
+
+\newcommand{\annannen}{
+\ns{4}
+\section{Ännännen}
+\begin{verse} 
+    \textit{(säv. Viimeinen)}\\!
+    Ännännää\dots jeeijee.\\
+    Ännännää\dots jeeijee.\\!
+
+\ns{4}
+    Hei, taas kurssin feilasin,\\
+    Kun liikaa ryyppäsin. Mua aina janottaa.\\
+    Katsot mua, kun tiskille mä meen\\
+    Ja lärvilautasen Mä pöytään kannan taas.\\!
+
+\ns{4}
+    Mä oon ännännen, Kaikki tietää sen.\\
+    Viinanhimoinen, Juomaa jättäis en.\\
+    Laatutietoisin, Viinapää kovin.\\
+    Mutta kuitenkin Valmistuu tahtoisin.\\!
+
+\ns{4}
+    Hei, taas semmaa lykkäsin, \\
+    Ja sivuaineen otin. Mua kaikki kiinnostaa.\\
+    Katsot mua, kun kirjastolle meen\\
+    Ja vaihdan pian someen En pysty lukemaan.\\!
+
+\ns{4}
+    Mä oon ännännen, Kaikki tietää sen.\\
+    Noppii keräilen, Kokonaisuuksii en.\\
+    Monipuolisin, Rekisteri pisin.\\
+    Mutta kuitenkin Tutkinnon tahtoisin.\\!
+
+\ns{4}
+    Hei, taas hallitushommiin,\\
+    Neuvostoon, edariin, Mua aina tarvitaan.\\
+    Katsot mua, kun kokoukseen mä meen,\\
+    Ja uuteen vastuuseen Aktiivi joutuu taas.\\!
+
+\ns{4}
+    Mä oon ännännen, Kaikki tietää sen.\\
+    Vastuuntuntoinen, Teitä jättäis en.\\
+    Hommat hoitelen, CV:tä keräilen, \\
+    Mutta kuitenkin Pois mä tahtoisin.\\!
+
+\ns{4}
+    Hei, taas hallitushommiin, \\
+    Neuvostoon, edariin, Mua aina pyydetään.\\
+    Ootat mua, en kokoukseen mä tuu,\\
+    Vastuuseen joku muu, Tuoreempi joutuu taas.\\!
+
+\ns{4}
+    Mä oon ännännen, Kaikki tietää sen.\\
+    Vastuut väistelen, Välitä mä en.\\
+    Mä oon laiskinkin, Näky harvinaisin,\\
+    Lopullisestikin Pois mä tahtoisin.\\!
+
+\ns{4}
+    Hei, taas hommii lykkäsin, \\
+    Työvuoroja otin. Mua gradu ahdistaa.\\
+    Katsot mua, kun kassalle mä meen,\\
+    Vaivun masennukseen, En alan töitä saa.\\
+\end{verse}}
+
+%---------------------------------
+%       Schrödingerin kissa
+%---------------------------------
+\newcommand{\schro}{
+\ns{7}
+\section{Schrödingerin kissa}
+\begin{verse}
+    \textit{(säv. Hämä-hämä-häkki)}\\!
+    Schrödingerin kissa oli laatikossa,\\
+    Kissa oli kuollut taikka sitten ei,\\
+    Laplace sekä Maxwell löivät vetoa.\\
+    Schrödingerin kissa oli\\
+    ELOSSA/KUOLLUT\\
+\end{verse}}
+
+
+
+\newcommand{\paljukansa}{
+\ns{13}
+\section{Paljukansa}
+\begin{verse}
+    \textit{(säv. Rallikansa)}\\!
+    
+    Me ollaan paljukansa,\\
+    Teekkaritalolla tai exculla kuin kotonansa,\\
+    kasaa jo kolmannetta kerrostansa.\\
+    Paljukansa,\\
+    jättäen jälkeen eritteitään sekä solujansa,\\
+    ei tölkkejä vie koskaan mukanansa.\\
+    Paljukansa, tasosta vedenpinnan huolissansa.\\
+    Paljukansa, jättää pukkariin lasipullojansa.\\
+    Paljukansa, koko illan lilluu\\
+    sitkeimmät he paljussansa,\\
+    paljussansa, paljussansa.\\!
+
+\ns{12}
+    Mihis paljuun sitä ollaan menossa?\\
+    Poreitakin saattaa löytyy nakkisopasta.\\
+    Nimikierrosta ei saa koskaan maaliin.\\
+    Ihmisii, lauluu, hälyä ku laatikossa kaalii.\\
+    Fuksist lähtien\\
+    näit paljuöitä kertyy alla tähtien.\\
+    "Missä on poreet?"\\
+    joku ain sitä hokee, ku nappii löydä ei kätönen.\\
+    Vaik näyttää täydeltä,\\
+    sylistä jostakin löytyypi paikka.\\
+    Kunhan vaan kysyy, ei kontaktii pelkää,\\
+    ännännen lisäys onnistuu aina.\\!
+
+    Me ollaan paljukansa, \dots\\!
+
+\ns{3}
+    Me ollaan paljukansa, paljukansa,\\
+    paljukansa, paljukansa,\\
+    paljukansa, paljukansa.\\!
+
+\ns{11}
+    Perse penkkiin, siis jos se sinne yltää.\\
+    Olkapäät voi jäätyy: "Ai vittu ku on kylmää!"\\
+    Kaikenlaista aktii mahtuu paljun kylkeen.\\
+    Liukastellen juoksemme\\
+    järveen taikka hankeen.\\
+    Miksi on niin helppoa se paljupipo unohtaa\\
+    ja hiukset jäätyy joka kerta\\
+    nokkasiiltä muistuttaan?\\
+    Klooriannostelijalla voidaan pitää hauskaa,\\
+    mutta muista aina suihkun\\
+    kautta mennä saunaan!\\!
+
+    Me ollaan paljukansa, \dots \\!
+
+\ns{3}
+    Me ollaan paljukansa, paljukansa,\\
+    paljukansa, paljukansa,\\
+    paljukansa, paljukansa.\\!
+
+\ns{3}
+    Me ollaan paljukansa, paljukansa,\\
+    paljukansa, paljukansa,\\
+    paljukansa, paljukansa.
+\end{verse}}
+
+
+\newcommand{\hulivilipojanhumppa}{
+\ns{5}
+\section{Hulivili-pojan humppa}
+\begin{verse}
+    Kun kirkonkylän baarin oven aukaisen,\\
+    ja itselleni etsin vapaan tuolin,\\
+    viimeisimmät vitsit siinä laukaisen.\\
+    Ei meikäläinen sorru turhiin huoliin.\\!
+
+\ns{4}
+    Sillä minä olen sellainen hulivili-poika,\\
+    hurmuriluonne ja huhhahhhei!\\
+    En rahojani tuhlaile, mielummin juon ne,\\
+    ja heiloille huudan, "Hellurei!" \textit{Hellurei!}\\!
+
+\ns{6}
+    Tuskin kylän kovin kundi olisin,\\
+    jos en silloin tällöin innostuisi juomaan.\\
+    Kun illan mittaan joku kutsuu poliisin,\\
+    mä hänellekin lasin pyydän tuomaan\\!
+
+    :,: Sillä minä olen sellainen \dots\ :,:\\!
+
+    \textit{Ei lopu pilsneri ikinä \dots}
+\end{verse}}
+
+\endinput
