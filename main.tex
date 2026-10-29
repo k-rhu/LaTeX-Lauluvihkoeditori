@@ -1,7 +1,7 @@
 \documentclass[11pt]{article} %fonttikoko
 \usepackage{graphicx} % Required for inserting images
-\usepackage[hidelinks]{hyperref}
-\usepackage[left=2cm,right=2cm,bottom=1in]{geometry}
+\usepackage[hidelinks]{hyperref} % linkit sisälllysluettelossa
+\usepackage[left=1cm,right=1cm,bottom=1in]{geometry}
 %\usepackage{verse} % sisältyy laulupankki -pakettiin
 \usepackage{multicol}
 
@@ -16,7 +16,7 @@
 
 
 
-\usepackage{titlesec} %
+\usepackage{titlesec} % Otsikoiden formatointia varten
 
 \usepackage{blindtext}
 \usepackage[finnish]{babel}
@@ -24,10 +24,9 @@
 \usepackage{tocloft} % Formationtia varten
 
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}   %   Piste-erottimet sisällysluetteloon
+
 \setlength{\cftbeforesecskip}{2pt}   % tiivistys sisällysluetteloon section
 \setlength{\cftbeforesubsecskip}{1pt}   % tiivistys sisällysluetteloon subsection
-
-
 
 
 %
@@ -35,7 +34,7 @@
 %           Laulun numeron ja otsikon väliin.
 %
 
-\setlength{\cftsecnumwidth}{2.2em} 
+\setlength{\cftsecnumwidth}{20pt} % väli sisällysluettelon numeroinnin ja otsikoinnin välillä
 
 
 %\renewcommand{\thesubsection}{\thesection67.} %custom pääte alaotsikoihin
@@ -84,6 +83,7 @@
 
 %\renewcommand{\thepage}{67} %custom sivunumero 67-sitseillä :D
 
+%
 %           Voit siirrellä lauluja sivulta toiselle komentoyhdistelmällä
 %           \vfill\null \columnbreak
 %           Tämä kuitenkin on työlästä, joten määritellään uusi komento tätä varten
@@ -101,14 +101,15 @@
 %       ETUSIVU
 %---------------------------------
 
+%\sffamily
 \begin{document}
 
 \thispagestyle{empty}
 \vspace*{1cm}
 \begin{center}
-\includegraphics[width=0.9\linewidth]{Sigmamv.png}\\
+%\includegraphics[width=0.9\linewidth]{kuva.png}\\
 \vspace{1cm}
-\LARGE \textbf{Mistä nää tuut?\\Laululäsy}
+\LARGE \textbf{Laululäsy}
 \end{center}
 
 \clearpage
@@ -191,6 +192,7 @@
     \aquavera
 
     \cb
+
     \vesihenkilo
 
     %---------------------------------
@@ -328,6 +330,7 @@
     %---------------------------------
     %           meemi bängereitä
     %---------------------------------
+
     %\grandiosa
     \yollataas
     \siljalinespecial
@@ -355,15 +358,13 @@
 
 \vspace{1cm}
 \textbf{Turvallisemman tilan periaatteet}\\
-Tapahtumassa noudatetaan Sigma-kilta ry:n Turvallisemman tilan periaatteita\\
+Tapahtumassa noudatetaan --- Turvallisemman tilan periaatteita\\
 
 \vspace{1.0cm}
 \textbf{Tämän tapahtuman häirintäyhteyshenkilöt:}\\
-Ellen Uusikylä, TG: @ellenhilla\\
-Ville Markkanen, TG: @mehumake\\
 
 \vspace{1cm}
-\textbf{Sigma-killan killan häirintäyhteyshenkilöt tavoittaa osoitteesta}\\
-hairinta@sigma-kilta.net
+\textbf{--- häirintäyhteyshenkilöt tavoittaa osoitteesta}\\
+
 \end{center}
 \end{document}

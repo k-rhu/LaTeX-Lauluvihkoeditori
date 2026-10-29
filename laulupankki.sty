@@ -16,6 +16,7 @@
 %---------------------------------------------
 %
 %               Laulut määritellään laulupankissa uusina komentoina \newcommand{\laulu}{
+%
 %               }
 %               -tyylillä. Aloita lalulu tämän jälkeen otsikolla \section{}
 %
@@ -23,7 +24,7 @@
 %               korvata olemassa olevia LaTeXin komentoja.
 %
 %               Laulupankissa käytetään verse-pakettia. Aloita laulun komennolla
-%               \bein{verse}
+%               \begin{verse}
 %               samoiten laulu päättyy komennolla 
 %               \end{verse}
 %
@@ -50,7 +51,7 @@
 
 %
 %           Lisäksi määriteltiin komento laulun osien poistamiselle, jotta ei tarvitse
-%           kommentoida tai poistaa säkeistöjä ym. rivi kerrallaan
+%           kommentoida tai poistaa säkeistöjä ym. rivi kerrallaan aina eri sitsejä varten
 %
 
 \newcommand{\poisto}[1]{}
@@ -68,8 +69,8 @@
 %           ==> käytä \textit{}:tä tätä varten
 %
 %           - Mikäli laulussa kerrataan jokin osa, älä kirjoita koko osaa uudelleen, vaan
-%           lisää kertausmerkit :,: säkeistön molemmille osin.
-%           Jos taas jokin säkeistö toistetaan myöhemmin, voit kirjottaa säkeistön alun
+%           lisää kertausmerkit :,: säkeistön molemmille puolin.
+%           - Jos taas jokin säkeistö toistetaan myöhemmin, voit kirjottaa säkeistön alun
 %           ja laittaa kolme pistettä (\dots) perään, jolloin aasinkin tulisi tajuta
 %           katsoa sanoja ylempää, jos on tarve.
 %           
@@ -85,9 +86,9 @@
 %-------------------
 
 \newcommand{\helangar}{
+\ns{6}
 \section{Helan går}
 \begin{verse}
-\ns{5}
     En liten fågel satt en gång\\
     och sjöng i furuskog.\\
     Han hade sjungit dagen lång\\
