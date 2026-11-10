@@ -105,6 +105,41 @@
 \end{verse}}
 
 %-------------------
+%   HENKILÖKUNTA
+%-------------------
+
+\newcommand{\henkilokunta}{
+\ns{7}
+\section{Henkilökunta}
+\begin{verse}
+    :,: Henkilökunta, henkilökunta, parlevu :,:\\
+    Henkilökunta, henkilökunta,\\
+    henkilökunta, henkilökunta.\\
+    :,: Henkilökunta, parlevu :,:\\
+    Lissää viinaa, lissää viinaa, parlevu\dots\\
+    Kaljakin kelpaa, kaljakin kelpaa, parlevu\dots\\
+\end{verse}}
+
+%---------------------------------
+%       Fuksilaulu
+%---------------------------------
+
+
+\newcommand{\fuksilaulu} {
+\ns{5}
+\section{Fuksilaulu}
+\begin{verse}
+    :,: Ken ompi fuksi XX ylös nouskohon :,:\\
+    Hän lasin käteen ottakoon\\ 
+    ja huulilleen sen nostakoon\\
+    :,: Juo pois, juo pois, juo pois, juo pois, juo \\ herran tähden pois, JUO POIS!  :,:\\!
+
+\ns{3}
+    :,: Ken ompi fuksi \{ killalta \}\dots :,:\\
+    :,: Ken ompi fuksi ylipäänsä\dots :,:\\
+\end{verse}}
+
+%-------------------
 %   AQUA VERA
 %-------------------
 
@@ -233,7 +268,8 @@
     mä silloin tahdon niin – Kaljaa.\\!
     
     Siihen himoon auta eivät vissyt eikä limut,\\
-    pienen lohdun tuoda voivat typsyt sekä pimut.\\
+    pienen lohdun tuoda\\
+    voivat typsyt sekä pimut.\\
     Suostu mä en\dots \\
     nyt tyytymään limppariin, \\
     kun kerran kumota voin paljon parempaakin:\\!
@@ -282,41 +318,6 @@
 }
 
 
-%-------------------
-%   HENKILÖKUNTA
-%-------------------
-
-\newcommand{\henkilokunta}{
-\ns{7}
-\section{Henkilökunta}
-\begin{verse}
-    :,: Henkilökunta, henkilökunta, parlevu :,:\\
-    Henkilökunta, henkilökunta,\\
-    henkilökunta, henkilökunta.\\
-    :,: Henkilökunta, parlevu :,:\\
-    Lissää viinaa, lissää viinaa, parlevu\dots\\
-    Kaljakin kelpaa, kaljakin kelpaa, parlevu\dots\\
-\end{verse}}
-
-%---------------------------------
-%       Fuksilaulu
-%---------------------------------
-
-
-\newcommand{\fuksilaulu} {
-\ns{5}
-\section{Fuksilaulu}
-\begin{verse}
-    :,: Ken ompi fuksi XX ylös nouskohon :,:\\
-    Hän lasin käteen ottakoon\\ 
-    ja huulilleen sen nostakoon\\
-    :,: Juo pois, juo pois, juo pois, juo pois, juo \\ herran tähden pois, JUO POIS!  :,:\\!
-
-\ns{3}
-    :,: Ken ompi fuksi Sigmalta\dots :,:\\
-    :,: Ken ompi fuksi ylipäänsä\dots :,:\\
-\end{verse}}
-
 %---------------------------------
 %       Sen Siiderin
 %---------------------------------
@@ -362,7 +363,8 @@
     en kirkkaampaa kaipaakaan.\\
     Limee, greippii, karpaloo!\\
     Lonkeroo!\\
-    Juomakseni saan, juomakseni saan - Lonkeron!
+    Juomakseni saan, juomakseni saan\\
+    - Lonkeron!
 \end{verse}}
 
 %---------------------------------
@@ -883,31 +885,31 @@
     Kun mä kuolen, taskumattini sä saat!\\!
 
 \ns{4}
-    ;.; Kun mä kuolen, vanhat kortsuni sä saat ;.;\\
+    ;.; Kun mä kuolen,\\
+    vanhat kortsuni sä saat ;.;\\
     Sillä taivaassa ei panna,\\
     koska enkelit ei anna.\\
     Kun mä kuolen, vanhat kortsuni sä saat!\\!
 
-\poisto{
-ns{4}
-    ;.; Kun mä kuolen, vanhan heilani sä saat ;.;\\
+\ns{4}
+    ;.; Kun mä kuolen,\\
+    vanhan heilani sä saat ;.;\\
     Sen voin jättää, ihanuuden,\\
     kun saan enkelistä uuden.\\
     Kun mä kuolen, vanhan heilani sä saat!\\!
-    }
 
 \ns{4}
-    ;.; Kun mä kuolen, pullo arkkuun laittakaa. ;.;\\
+    ;.; Kun mä kuolen,\\
+    pullo arkkuun laittakaa. ;.;\\
     Sillä elo ilman viina\\
     on myös taivaassakin piinaa,\\
     Kun mä kuolen, pullo arkkuun laittakaa!\\!
 
-\poisto{\ns{4}
+\ns{4}
     :,: Kun mä kuolen, asekätköni sä saat. :,:\\
     Se on tuolla ladon alla,\\
     kolmas kivi vasemmalla.\\
     Kun mä kuolen, asekätköni sä saat.\\!
-    }
 
 \ns{4}
     :,: Kun mä kuolen, korttipakkani sä saat. :,:\\
@@ -915,7 +917,7 @@ ns{4}
     eikä myöskään pelaa pokkaa.\\
     Kun mä kuolen, korttipakkani sä saat.\\!
 
-\poisto{
+
 \ns{4}
     :,: Kun mä kuolen Loimu-jäsenyyden saat. :,:\\
     Tahdon antaa sen mä sulle,\\
@@ -924,11 +926,12 @@ ns{4}
     
 
 \ns{4}
-    :,: Kun mä kuolen Loimu-merkkini sä saat. :,:\\
+    :,: Kun mä kuolen\\
+    Loimu-merkkini sä saat. :,:\\
     Taivaas ei oo haalareita,\\
     kaikki kulkee Aatameina,\\
     kun mä kuolen Loimu-merkkini sä saat.\\
-    }
+
     
 \end{verse}
 }
@@ -1123,33 +1126,37 @@ ns{4}
 %---------------------------------
 
 \newcommand{\derivaattanollanarvoinen}{
-\ns{7}
+\ns{8}
 \section{Derivaatta nollan arvoinen}
 \begin{verse}
     \textit{(säv. rakkaus on lumivalkoinen)}\\!
     Hän avannut on Matlabinsa tietokoneelleen,\\
     valo hohkaa näytöstänsä suoraan\\
     sieluun janoiseen.\\
-    Saa kämpässänsä koko päivän tehdä koodejaan\\
+    Saa kämpässänsä koko päivän\\
+    tehdä koodejaan\\
     ja tuntea, kun hiki virtaa vaan.\\!
 
-\ns{5}
+\ns{6}
     Hän risti kädet, käänsi paraabelin ylöspäin\\
-    ja kiitti, miten onkaan saanut laskeskella näin.\\ 
+    ja kiitti, miten onkaan saanut\\
+    laskeskella näin.\\ 
     Aina toivoi kyllä paljon,\\
-    mutta saikin enemmän –\\
-    vaan ei yhtä tiennyt hän:\\!
+    mutta saikin enemmän\\
+    - vaan ei yhtä tiennyt hän:\\!
 
-\ns{5}
-    Niin pienen hetken derivaatta nollan arvoinen\\
+\ns{6}
+    Niin pienen hetken\\
+    derivaatta nollan arvoinen\\
     on niin kuin kurssiarvosanat n-fuksien.\\
     Voi, kunpa joskus kauemmin sen\\
     nolluus kestää vois;\\
     dx:n tullen katoaa ja kääntyy käyrä pois.\\!
 
-\ns{4}
+\ns{5}
     Ei koskaan kysy saapuessaan lupaa dy\\ 
-    ja muutoksensa aiheuttaa voi pienen pieni syy.\\ 
+    ja muutoksensa aiheuttaa voi\\
+    pienen pieni syy.\\ 
     Kun polynomi alkaa äärettömään sukeltaa\\
     tai lähtee ylös nousemaan.\\!
     
@@ -1159,7 +1166,8 @@ ns{4}
     Näin aamu astui ikkunasta sisään huoneeseen.\\
     Hän valvottuaan laittoi\\
     puolipisteet kohdalleen.\\
-    Kuvaajasta katsoi miten kaunis voikaan olla f\\
+    Kuvaajasta katsoi miten kaunis\\
+    voikaan olla f\\
     – vaikkei ole ODE.\\!
     
     Niin pienen hetken derivaatta\dots\\
@@ -1443,9 +1451,7 @@ Siis Ivan kääntyy hyökkääjää päin\\
 ja Volgan liejuun sekoittuu verta\\
 sen virta kuljettaa Kaspiaan näin\\!
 
-Volga, volga\dots\\
-
-(Volga! volga!)\\
+Volga, volga\dots\\!
 
 \ns{4}
 Jos emme koskaan näkisi merta,\\
@@ -2932,11 +2938,12 @@ Sua ei voi vangita, ahahahaha.\\
     Hommat hoitelen, CV:tä keräilen, \\
     Mutta kuitenkin Pois mä tahtoisin.\\!
 
-\ns{4}
+\ns{5}
     Hei, taas hallitushommiin, \\
     Neuvostoon, edariin, Mua aina pyydetään.\\
     Ootat mua, en kokoukseen mä tuu,\\
-    Vastuuseen joku muu, Tuoreempi joutuu taas.\\!
+    Vastuuseen joku muu,\\
+    Tuoreempi joutuu taas.\\!
 
 \ns{4}
     Mä oon ännännen, Kaikki tietää sen.\\
